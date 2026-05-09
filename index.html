@@ -11,50 +11,28 @@
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
-    <!-- FontAwesome Brands (Logo Medsos Orisinal) -->
+    <!-- FontAwesome Brands -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <!-- Google Fonts: Plus Jakarta Sans -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <style>
-        /* TEMA 1: PINK CERIA (DEFAULT) */
+        /* TEMA WARNA */
         :root, [data-theme="pink"] {
-            --color-brand-50: 253 242 248;   /* #fdf2f8 */
-            --color-brand-100: 252 231 243;  /* #fce7f3 */
-            --color-brand-200: 251 207 232;  /* #fbcfe8 */
-            --color-brand-300: 249 168 212;  /* #f9a8d4 */
-            --color-brand-400: 244 114 182;  /* #f472b6 */
-            --color-brand-500: 236 72 153;   /* #ec4899 */
-            --color-brand-600: 219 39 119;   /* #db2777 */
-            --color-brand-900: 131 24 67;    /* #831843 */
-            --color-accent-400: 251 146 60;  /* Orange/Peach */
+            --color-brand-50: 253 242 248; --color-brand-100: 252 231 243; --color-brand-200: 251 207 232;
+            --color-brand-300: 249 168 212; --color-brand-400: 244 114 182; --color-brand-500: 236 72 153;
+            --color-brand-600: 219 39 119; --color-brand-900: 131 24 67; --color-accent-400: 251 146 60;
         }
-
-        /* TEMA 2: BIRU SAMUDRA */
         [data-theme="blue"] {
-            --color-brand-50: 239 246 255;   /* #eff6ff */
-            --color-brand-100: 219 234 254;  /* #dbeafe */
-            --color-brand-200: 191 219 254;  /* #bfdbfe */
-            --color-brand-300: 147 197 253;  /* #93c5fd */
-            --color-brand-400: 96 165 250;   /* #60a5fa */
-            --color-brand-500: 59 130 246;   /* #3b82f6 */
-            --color-brand-600: 37 99 235;    /* #2563eb */
-            --color-brand-900: 30 58 138;    /* #1e3a8a */
-            --color-accent-400: 34 211 238;  /* Cyan Neon */
+            --color-brand-50: 239 246 255; --color-brand-100: 219 234 254; --color-brand-200: 191 219 254;
+            --color-brand-300: 147 197 253; --color-brand-400: 96 165 250; --color-brand-500: 59 130 246;
+            --color-brand-600: 37 99 235; --color-brand-900: 30 58 138; --color-accent-400: 34 211 238;
         }
-
-        /* TEMA 3: HIJAU FRESH */
         [data-theme="green"] {
-            --color-brand-50: 240 253 244;   /* #f0fdf4 */
-            --color-brand-100: 220 252 231;  /* #dcfce7 */
-            --color-brand-200: 187 247 208;  /* #bbf7d0 */
-            --color-brand-300: 134 239 172;  /* #86efac */
-            --color-brand-400: 74 222 128;   /* #4ade80 */
-            --color-brand-500: 34 197 94;    /* #22c55e */
-            --color-brand-600: 22 163 74;    /* #16a34a */
-            --color-brand-900: 20 83 45;     /* #14532d */
-            --color-accent-400: 250 204 21;  /* Yellow Bright */
+            --color-brand-50: 240 253 244; --color-brand-100: 220 252 231; --color-brand-200: 187 247 208;
+            --color-brand-300: 134 239 172; --color-brand-400: 74 222 128; --color-brand-500: 34 197 94;
+            --color-brand-600: 22 163 74; --color-brand-900: 20 83 45; --color-accent-400: 250 204 21;
         }
     </style>
 
@@ -64,186 +42,111 @@
                 extend: {
                     fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] },
                     colors: {
-                        brand: {
-                            50: 'rgb(var(--color-brand-50) / <alpha-value>)',
-                            100: 'rgb(var(--color-brand-100) / <alpha-value>)',
-                            200: 'rgb(var(--color-brand-200) / <alpha-value>)',
-                            300: 'rgb(var(--color-brand-300) / <alpha-value>)',
-                            400: 'rgb(var(--color-brand-400) / <alpha-value>)',
-                            500: 'rgb(var(--color-brand-500) / <alpha-value>)',
-                            600: 'rgb(var(--color-brand-600) / <alpha-value>)',
-                            900: 'rgb(var(--color-brand-900) / <alpha-value>)',
-                        },
-                        accent: {
-                            400: 'rgb(var(--color-accent-400) / <alpha-value>)',
-                        }
+                        brand: { 50: 'rgb(var(--color-brand-50))', 100: 'rgb(var(--color-brand-100))', 200: 'rgb(var(--color-brand-200))', 300: 'rgb(var(--color-brand-300))', 400: 'rgb(var(--color-brand-400))', 500: 'rgb(var(--color-brand-500))', 600: 'rgb(var(--color-brand-600))', 900: 'rgb(var(--color-brand-900))' },
+                        accent: { 400: 'rgb(var(--color-accent-400))' }
                     },
-                    animation: {
-                        'fade-in': 'fadeIn 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards',
-                        'slide-up': 'slideUp 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards',
-                    },
-                    keyframes: {
-                        fadeIn: { '0%': { opacity: '0' }, '100%': { opacity: '1' } },
-                        slideUp: { '0%': { opacity: '0', transform: 'translateY(20px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } }
-                    }
+                    animation: { 'fade-in': 'fadeIn 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards', 'slide-up': 'slideUp 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards' },
+                    keyframes: { fadeIn: { '0%': { opacity: '0' }, '100%': { opacity: '1' } }, slideUp: { '0%': { opacity: '0', transform: 'translateY(20px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } } }
                 }
             }
         }
     </script>
 
     <style>
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background: linear-gradient(135deg, rgb(var(--color-brand-50)) 0%, rgb(var(--color-brand-100)) 100%);
-            background-image: radial-gradient(rgba(var(--color-brand-500), 0.3) 2px, transparent 2px);
-            background-size: 32px 32px;
-            background-attachment: fixed;
-            transition: background 0.5s ease;
-        }
-        
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: transparent; }
-        ::-webkit-scrollbar-thumb { background: rgb(var(--color-brand-400)); border-radius: 20px; transition: background 0.3s;}
-        ::-webkit-scrollbar-thumb:hover { background: rgb(var(--color-brand-500)); }
-        
-        .glass {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(24px);
-            -webkit-backdrop-filter: blur(24px);
-            border: 3px solid rgb(var(--color-brand-200));
-            box-shadow: 0 15px 35px -5px rgba(var(--color-brand-500), 0.2);
-            transition: border-color 0.5s ease, box-shadow 0.5s ease;
-        }
-
-        /* Warna Orisinal FontAwesome (Akurat Sesuai Brand) */
-        .color-fb { color: #1877F2; } .bg-fb { background-color: #1877F2; color: #ffffff;}
-        .color-tw { color: #000000; } .bg-tw { background-color: #000000; color: #ffffff;}
-        .color-ig { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .bg-ig { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%); color: #ffffff;}
-        .color-li { color: #0A66C2; } .bg-li { background-color: #0A66C2; color: #ffffff;}
-        .color-yt { color: #FF0000; } .bg-yt { background-color: #FF0000; color: #ffffff;}
-        .color-tk { color: #000000; } .bg-tk { background-color: #000000; color: #ffffff;}
-        .color-wa { color: #25D366; } .bg-wa { background-color: #25D366; color: #ffffff;}
-        .color-tg { color: #24A1DE; } .bg-tg { background-color: #24A1DE; color: #ffffff;}
-        .color-pt { color: #E60023; } .bg-pt { background-color: #E60023; color: #ffffff;}
-        .color-th { color: #000000; } .bg-th { background-color: #000000; color: #ffffff;}
-
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: linear-gradient(135deg, rgb(var(--color-brand-50)) 0%, rgb(var(--color-brand-100)) 100%); background-image: radial-gradient(rgba(var(--color-brand-500), 0.3) 2px, transparent 2px); background-size: 32px 32px; background-attachment: fixed; transition: background 0.5s ease; }
+        ::-webkit-scrollbar { width: 8px; } ::-webkit-scrollbar-track { background: transparent; } ::-webkit-scrollbar-thumb { background: rgb(var(--color-brand-400)); border-radius: 20px; transition: background 0.3s;} ::-webkit-scrollbar-thumb:hover { background: rgb(var(--color-brand-500)); }
+        .glass { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(24px); border: 3px solid rgb(var(--color-brand-200)); box-shadow: 0 15px 35px -5px rgba(var(--color-brand-500), 0.2); transition: border-color 0.5s ease, box-shadow 0.5s ease; }
+        .color-fb { color: #1877F2; } .bg-fb { background-color: #1877F2; color: #ffffff;} .color-tw { color: #000000; } .bg-tw { background-color: #000000; color: #ffffff;} .color-ig { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; } .bg-ig { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%); color: #ffffff;} .color-li { color: #0A66C2; } .bg-li { background-color: #0A66C2; color: #ffffff;} .color-yt { color: #FF0000; } .bg-yt { background-color: #FF0000; color: #ffffff;} .color-tk { color: #000000; } .bg-tk { background-color: #000000; color: #ffffff;} .color-wa { color: #25D366; } .bg-wa { background-color: #25D366; color: #ffffff;} .color-tg { color: #24A1DE; } .bg-tg { background-color: #24A1DE; color: #ffffff;} .color-pt { color: #E60023; } .bg-pt { background-color: #E60023; color: #ffffff;} .color-th { color: #000000; } .bg-th { background-color: #000000; color: #ffffff;}
         .btn-smooth:active { transform: scale(0.95); transition: transform 0.1s; }
-
-        /* Toast Popup Styling */
-        #toast-container {
-            position: fixed; top: 20px; left: 50%; transform: translateX(-50%); z-index: 9999;
-            display: flex; flex-direction: column; gap: 10px; pointer-events: none;
-        }
-        .toast {
-            padding: 12px 24px; border-radius: 50px; color: white; font-weight: 800; font-size: 14px;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
-            animation: slideDownToast 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards, fadeOutToast 0.4s 3.5s forwards;
-            pointer-events: auto; border: 2px solid rgba(255,255,255,0.2);
-        }
-        @keyframes slideDownToast { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes fadeOutToast { from { opacity: 1; transform: translateY(0); } to { opacity: 0; transform: translateY(-20px); } }
+        #toast-container { position: fixed; top: 20px; left: 50%; transform: translateX(-50%); z-index: 9999; display: flex; flex-direction: column; gap: 10px; pointer-events: none; }
+        .toast { padding: 12px 24px; border-radius: 50px; color: white; font-weight: 800; font-size: 14px; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2); animation: slideDownToast 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards, fadeOutToast 0.4s 3.5s forwards; pointer-events: auto; border: 2px solid rgba(255,255,255,0.2); }
+        @keyframes slideDownToast { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } } @keyframes fadeOutToast { from { opacity: 1; transform: translateY(0); } to { opacity: 0; transform: translateY(-20px); } }
     </style>
 </head>
 <body class="flex h-screen overflow-hidden text-slate-800 selection:bg-brand-200 selection:text-brand-900">
 
     <div id="toast-container"></div>
 
-    <!-- Halaman Login (Pintu Masuk) -->
+    <!-- Halaman Login -->
     <div id="login-screen" class="fixed inset-0 z-[100] flex items-center justify-center bg-gradient-to-br from-brand-50 to-brand-200 transition-opacity duration-500">
-        <!-- Dekorasi Background -->
         <div class="absolute inset-0 bg-[radial-gradient(rgba(var(--color-brand-500),0.1)_2px,transparent_2px)] [background-size:32px_32px]"></div>
         
-        <div class="glass w-full max-w-md p-8 md:p-10 rounded-[2.5rem] relative z-10 shadow-2xl border-4 border-white animate-slide-up mx-4">
-            <div class="text-center mb-8">
-                <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-tr from-brand-500 to-accent-400 rounded-2xl text-white shadow-lg mb-4 rotate-3">
-                    <i data-lucide="sparkles" class="w-8 h-8"></i>
-                </div>
-                <h2 id="auth-title" class="text-3xl font-black text-brand-900 tracking-tight mb-2">Selamat Datang</h2>
-                <p id="auth-subtitle" class="text-brand-600 font-bold">Pintu masuk ke SosialHub</p>
+        <div class="glass w-full max-w-md p-8 md:p-10 rounded-[2.5rem] relative z-10 shadow-2xl border-4 border-white mx-4 flex flex-col justify-center items-center" id="login-card">
+            
+            <!-- Loading Indicator Awal -->
+            <div id="auth-loading" class="text-center w-full py-10">
+                <i class="fa-solid fa-circle-notch fa-spin text-brand-500 text-4xl mb-4"></i>
+                <h3 class="font-bold text-brand-900">Menyiapkan Keamanan...</h3>
             </div>
 
-            <!-- CONTAINER LOGIN -->
-            <div id="view-login" class="animate-fade-in">
-                <!-- Role Selector -->
-                <div class="flex bg-brand-100 p-1 rounded-2xl mb-6 relative">
-                    <div id="login-slider" class="absolute w-1/2 h-[calc(100%-8px)] bg-white rounded-xl shadow-sm top-1 left-0 border-4 border-transparent bg-clip-padding transition-transform duration-300 transform translate-x-0"></div>
-                    <button onclick="switchLoginRole('admin')" type="button" class="flex-1 py-3 text-sm font-black z-10 text-brand-900 transition-colors" id="btn-role-admin">Admin Agensi</button>
-                    <button onclick="switchLoginRole('client')" type="button" class="flex-1 py-3 text-sm font-black z-10 text-brand-500 transition-colors" id="btn-role-client">Klien Pengguna</button>
+            <!-- Form Otentikasi (Sembunyi saat loading) -->
+            <div id="auth-forms" class="w-full hidden animate-slide-up">
+                <div class="text-center mb-8">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-tr from-brand-500 to-accent-400 rounded-2xl text-white shadow-lg mb-4 rotate-3">
+                        <i data-lucide="sparkles" class="w-8 h-8"></i>
+                    </div>
+                    <h2 id="auth-title" class="text-3xl font-black text-brand-900 tracking-tight mb-2">Selamat Datang</h2>
+                    <p id="auth-subtitle" class="text-brand-600 font-bold">Pintu masuk ke SosialHub</p>
                 </div>
 
-                <form onsubmit="handleLogin(event)" class="space-y-4">
-                    <div>
-                        <div class="relative">
-                            <i data-lucide="mail" class="absolute left-4 top-3.5 w-5 h-5 text-brand-400"></i>
-                            <input type="email" id="login-email" required class="w-full bg-white/80 border-4 border-brand-100 rounded-2xl py-3 pl-12 pr-4 focus:border-brand-500 focus:bg-white outline-none font-bold text-brand-900 placeholder-brand-400" placeholder="Email Anda">
-                        </div>
+                <!-- CONTAINER LOGIN -->
+                <div id="view-login">
+                    <div class="flex bg-brand-100 p-1 rounded-2xl mb-6 relative">
+                        <div id="login-slider" class="absolute w-1/2 h-[calc(100%-8px)] bg-white rounded-xl shadow-sm top-1 left-0 border-4 border-transparent bg-clip-padding transition-transform duration-300 transform translate-x-0"></div>
+                        <button onclick="switchLoginRole('admin')" type="button" class="flex-1 py-3 text-sm font-black z-10 text-brand-900 transition-colors" id="btn-role-admin">Admin Agensi</button>
+                        <button onclick="switchLoginRole('client')" type="button" class="flex-1 py-3 text-sm font-black z-10 text-brand-500 transition-colors" id="btn-role-client">Klien Pengguna</button>
                     </div>
-                    <div>
-                        <div class="relative">
-                            <i data-lucide="lock" class="absolute left-4 top-3.5 w-5 h-5 text-brand-400"></i>
-                            <input type="password" id="login-password" required class="w-full bg-white/80 border-4 border-brand-100 rounded-2xl py-3 pl-12 pr-4 focus:border-brand-500 focus:bg-white outline-none font-bold text-brand-900 placeholder-brand-400" placeholder="Kata Sandi">
-                        </div>
-                    </div>
-                    <div class="pt-2">
-                        <button id="submit-login" type="submit" class="w-full bg-gradient-to-r from-brand-500 to-accent-400 text-white font-black text-lg py-4 rounded-2xl shadow-[0_10px_25px_rgba(var(--color-brand-500),0.4)] hover:from-brand-600 transition-all btn-smooth flex justify-center items-center gap-2">
-                            Masuk Dasbor <i data-lucide="arrow-right" class="w-5 h-5"></i>
-                        </button>
-                    </div>
-                </form>
-                
-                <div class="relative flex py-5 items-center">
-                    <div class="flex-grow border-t-2 border-brand-100"></div>
-                    <span class="flex-shrink-0 mx-4 text-brand-400 text-sm font-extrabold">ATAU</span>
-                    <div class="flex-grow border-t-2 border-brand-100"></div>
-                </div>
-                
-                <button type="button" onclick="handleGoogleAuth()" class="w-full bg-white text-slate-700 font-extrabold text-lg py-3.5 rounded-2xl shadow-sm border-4 border-slate-100 hover:bg-slate-50 hover:border-slate-200 transition-all btn-smooth flex justify-center items-center gap-3">
-                    <i class="fa-brands fa-google text-rose-500 text-xl"></i> Masuk dengan Google
-                </button>
 
-                <p class="text-center mt-6 text-sm font-extrabold text-brand-600">Belum punya akun? <button type="button" onclick="toggleAuthView('register')" class="text-brand-900 font-black hover:underline focus:outline-none">Daftar sekarang</button></p>
-            </div>
+                    <form onsubmit="handleLogin(event)" class="space-y-4">
+                        <div>
+                            <div class="relative">
+                                <i data-lucide="mail" class="absolute left-4 top-3.5 w-5 h-5 text-brand-400"></i>
+                                <input type="email" id="login-email" required class="w-full bg-white/80 border-4 border-brand-100 rounded-2xl py-3 pl-12 pr-4 focus:border-brand-500 focus:bg-white outline-none font-bold text-brand-900 placeholder-brand-400" placeholder="Email Anda">
+                            </div>
+                        </div>
+                        <div>
+                            <div class="relative">
+                                <i data-lucide="lock" class="absolute left-4 top-3.5 w-5 h-5 text-brand-400"></i>
+                                <input type="password" id="login-password" required class="w-full bg-white/80 border-4 border-brand-100 rounded-2xl py-3 pl-12 pr-4 focus:border-brand-500 focus:bg-white outline-none font-bold text-brand-900 placeholder-brand-400" placeholder="Kata Sandi">
+                            </div>
+                        </div>
+                        <div class="pt-2">
+                            <button id="submit-login" type="submit" class="w-full bg-gradient-to-r from-brand-500 to-accent-400 text-white font-black text-lg py-4 rounded-2xl shadow-[0_10px_25px_rgba(var(--color-brand-500),0.4)] hover:from-brand-600 transition-all btn-smooth flex justify-center items-center gap-2">
+                                Masuk Dasbor <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                            </button>
+                        </div>
+                    </form>
+                    
+                    <div class="relative flex py-5 items-center">
+                        <div class="flex-grow border-t-2 border-brand-100"></div>
+                        <span class="flex-shrink-0 mx-4 text-brand-400 text-sm font-extrabold">ATAU</span>
+                        <div class="flex-grow border-t-2 border-brand-100"></div>
+                    </div>
+                    
+                    <button type="button" onclick="handleGoogleAuth()" class="w-full bg-white text-slate-700 font-extrabold text-lg py-3.5 rounded-2xl shadow-sm border-4 border-slate-100 hover:bg-slate-50 hover:border-slate-200 transition-all btn-smooth flex justify-center items-center gap-3">
+                        <i class="fa-brands fa-google text-rose-500 text-xl"></i> Masuk dengan Google
+                    </button>
 
-            <!-- CONTAINER REGISTER -->
-            <div id="view-register" class="hidden animate-fade-in">
-                <form onsubmit="handleRegister(event)" class="space-y-4">
-                    <div>
-                        <div class="relative">
-                            <i data-lucide="user" class="absolute left-4 top-3.5 w-5 h-5 text-brand-400"></i>
-                            <input type="text" id="register-name" required class="w-full bg-white/80 border-4 border-brand-100 rounded-2xl py-3 pl-12 pr-4 focus:border-brand-500 focus:bg-white outline-none font-bold text-brand-900 placeholder-brand-400" placeholder="Nama Bisnis">
-                        </div>
-                    </div>
-                    <div>
-                        <div class="relative">
-                            <i data-lucide="mail" class="absolute left-4 top-3.5 w-5 h-5 text-brand-400"></i>
-                            <input type="email" id="register-email" required class="w-full bg-white/80 border-4 border-brand-100 rounded-2xl py-3 pl-12 pr-4 focus:border-brand-500 focus:bg-white outline-none font-bold text-brand-900 placeholder-brand-400" placeholder="Email Baru">
-                        </div>
-                    </div>
-                    <div>
-                        <div class="relative">
-                            <i data-lucide="lock" class="absolute left-4 top-3.5 w-5 h-5 text-brand-400"></i>
-                            <input type="password" id="register-password" required class="w-full bg-white/80 border-4 border-brand-100 rounded-2xl py-3 pl-12 pr-4 focus:border-brand-500 focus:bg-white outline-none font-bold text-brand-900 placeholder-brand-400" placeholder="Sandi Min. 6 Karakter">
-                        </div>
-                    </div>
-                    <div class="pt-2">
-                        <button id="submit-register" type="submit" class="w-full bg-slate-900 text-white font-black text-lg py-4 rounded-2xl shadow-[0_10px_25px_rgba(0,0,0,0.2)] hover:bg-brand-500 transition-all btn-smooth flex justify-center items-center gap-2">
-                            Buat Akun Gratis <i data-lucide="user-plus" class="w-5 h-5"></i>
-                        </button>
-                    </div>
-                </form>
-
-                <div class="relative flex py-5 items-center">
-                    <div class="flex-grow border-t-2 border-brand-100"></div>
-                    <span class="flex-shrink-0 mx-4 text-brand-400 text-sm font-extrabold">ATAU</span>
-                    <div class="flex-grow border-t-2 border-brand-100"></div>
+                    <p class="text-center mt-6 text-sm font-extrabold text-brand-600">Belum punya akun? <button type="button" onclick="toggleAuthView('register')" class="text-brand-900 font-black hover:underline focus:outline-none">Daftar sekarang</button></p>
                 </div>
 
-                <button type="button" onclick="handleGoogleAuth()" class="w-full bg-white text-slate-700 font-extrabold text-lg py-3.5 rounded-2xl shadow-sm border-4 border-slate-100 hover:bg-slate-50 hover:border-slate-200 transition-all btn-smooth flex justify-center items-center gap-3">
-                    <i class="fa-brands fa-google text-rose-500 text-xl"></i> Daftar dengan Google
-                </button>
+                <!-- CONTAINER REGISTER -->
+                <div id="view-register" class="hidden">
+                    <form onsubmit="handleRegister(event)" class="space-y-4">
+                        <div class="relative"><i data-lucide="user" class="absolute left-4 top-3.5 w-5 h-5 text-brand-400"></i><input type="text" id="register-name" required class="w-full bg-white/80 border-4 border-brand-100 rounded-2xl py-3 pl-12 pr-4 focus:border-brand-500 focus:bg-white outline-none font-bold text-brand-900 placeholder-brand-400" placeholder="Nama Bisnis"></div>
+                        <div class="relative"><i data-lucide="mail" class="absolute left-4 top-3.5 w-5 h-5 text-brand-400"></i><input type="email" id="register-email" required class="w-full bg-white/80 border-4 border-brand-100 rounded-2xl py-3 pl-12 pr-4 focus:border-brand-500 focus:bg-white outline-none font-bold text-brand-900 placeholder-brand-400" placeholder="Email Baru"></div>
+                        <div class="relative"><i data-lucide="lock" class="absolute left-4 top-3.5 w-5 h-5 text-brand-400"></i><input type="password" id="register-password" required class="w-full bg-white/80 border-4 border-brand-100 rounded-2xl py-3 pl-12 pr-4 focus:border-brand-500 focus:bg-white outline-none font-bold text-brand-900 placeholder-brand-400" placeholder="Sandi Min. 6 Karakter"></div>
+                        <div class="pt-2"><button id="submit-register" type="submit" class="w-full bg-slate-900 text-white font-black text-lg py-4 rounded-2xl hover:bg-brand-500 transition-all btn-smooth">Buat Akun Gratis</button></div>
+                    </form>
 
-                <p class="text-center mt-6 text-sm font-extrabold text-brand-600">Sudah punya akun? <button type="button" onclick="toggleAuthView('login')" class="text-brand-900 font-black hover:underline focus:outline-none">Masuk di sini</button></p>
+                    <div class="relative flex py-5 items-center"><div class="flex-grow border-t-2 border-brand-100"></div><span class="flex-shrink-0 mx-4 text-brand-400 text-sm font-extrabold">ATAU</span><div class="flex-grow border-t-2 border-brand-100"></div></div>
+
+                    <button type="button" onclick="handleGoogleAuth()" class="w-full bg-white text-slate-700 font-extrabold text-lg py-3.5 rounded-2xl shadow-sm border-4 border-slate-100 hover:bg-slate-50 transition-all btn-smooth flex justify-center items-center gap-3">
+                        <i class="fa-brands fa-google text-rose-500 text-xl"></i> Daftar dengan Google
+                    </button>
+
+                    <p class="text-center mt-6 text-sm font-extrabold text-brand-600">Sudah punya akun? <button type="button" onclick="toggleAuthView('login')" class="text-brand-900 font-black hover:underline focus:outline-none">Masuk di sini</button></p>
+                </div>
             </div>
         </div>
     </div>
@@ -251,31 +154,21 @@
     <!-- Sidebar Desktop -->
     <aside class="w-72 glass hidden md:flex flex-col h-full z-20 border-r-4 border-brand-200 flex-shrink-0 relative">
         <div class="p-8 pb-6 flex items-center gap-4">
-            <div class="bg-gradient-to-tr from-brand-500 to-accent-400 p-3 rounded-[1.2rem] text-white shadow-lg shadow-brand-500/40 rotate-3 transition-colors duration-500">
-                <i data-lucide="sparkles" class="w-6 h-6"></i>
-            </div>
+            <div class="bg-gradient-to-tr from-brand-500 to-accent-400 p-3 rounded-[1.2rem] text-white shadow-lg shadow-brand-500/40 rotate-3 transition-colors duration-500"><i data-lucide="sparkles" class="w-6 h-6"></i></div>
             <span class="font-black text-3xl tracking-tight text-brand-900">SosialHub</span>
         </div>
-        
         <nav class="p-5 flex-1 space-y-2 overflow-y-auto" id="nav-menu"></nav>
         <div class="p-5 border-t-4 border-brand-100 space-y-2" id="nav-footer"></div>
     </aside>
 
     <main class="flex-1 flex flex-col min-h-screen w-full relative">
-        
         <!-- Mobile Header -->
         <div class="md:hidden glass border-b-4 border-brand-200 p-4 flex items-center justify-between z-20 relative">
-            <div class="flex items-center gap-3">
-                <div class="bg-gradient-to-tr from-brand-500 to-accent-400 p-2.5 rounded-xl text-white shadow-sm">
-                    <i data-lucide="sparkles" class="w-5 h-5"></i>
-                </div>
-            </div>
+            <div class="flex items-center gap-3"><div class="bg-gradient-to-tr from-brand-500 to-accent-400 p-2.5 rounded-xl text-white shadow-sm"><i data-lucide="sparkles" class="w-5 h-5"></i></div></div>
             <div class="flex-1 px-4">
                 <div class="relative">
                     <div id="mobile-client-lock-icon" class="hidden absolute left-3 top-2.5 z-10 text-slate-400"><i data-lucide="lock" class="w-4 h-4"></i></div>
-                    <select id="mobile-company-selector" onchange="changeCompany(this.value)" class="w-full bg-white border-4 border-brand-200 text-brand-700 font-black text-sm rounded-2xl py-2 px-3 outline-none appearance-none text-center shadow-sm">
-                        <!-- Options generated dynamically -->
-                    </select>
+                    <select id="mobile-company-selector" onchange="changeCompany(this.value)" class="w-full bg-white border-4 border-brand-200 text-brand-700 font-black text-sm rounded-2xl py-2 px-3 outline-none appearance-none text-center shadow-sm"></select>
                 </div>
             </div>
         </div>
@@ -283,254 +176,222 @@
         <!-- Top Header Desktop -->
         <header class="h-24 glass border-b-4 border-brand-200 hidden md:flex items-center justify-between px-10 z-10">
             <div class="flex items-center gap-8">
-                <h1 id="header-title" class="text-3xl font-black text-brand-900 tracking-tight drop-shadow-sm">
-                    Ruang Kendali
-                </h1>
-                
+                <h1 id="header-title" class="text-3xl font-black text-brand-900 tracking-tight drop-shadow-sm">Ruang Kendali</h1>
                 <div class="flex items-center border-l-4 border-brand-200 pl-8">
                     <div class="relative group">
                         <!-- Indikator Gembok untuk Klien -->
                         <div id="client-lock-icon" class="hidden absolute left-4 top-3.5 z-10 text-slate-400"><i data-lucide="lock" class="w-4 h-4"></i></div>
-                        
-                        <select id="company-selector" onchange="changeCompany(this.value)" class="appearance-none bg-white hover:bg-brand-50 border-4 border-brand-200 text-brand-800 font-black text-sm rounded-[1.5rem] focus:ring-4 focus:ring-brand-500/20 focus:border-brand-500 block py-3 pl-5 pr-12 outline-none cursor-pointer transition-all shadow-[0_4px_10px_rgba(var(--color-brand-500),0.1)] hover:shadow-brand-500/20">
-                             <!-- Options generated dynamically -->
-                        </select>
+                        <select id="company-selector" onchange="changeCompany(this.value)" class="appearance-none bg-white hover:bg-brand-50 border-4 border-brand-200 text-brand-800 font-black text-sm rounded-[1.5rem] focus:ring-4 focus:border-brand-500 block py-3 pl-5 pr-12 outline-none cursor-pointer transition-all shadow-[0_4px_10px_rgba(var(--color-brand-500),0.1)] hover:shadow-brand-500/20"></select>
                         <i data-lucide="chevron-down" id="company-chevron" class="w-5 h-5 absolute right-4 top-3.5 text-brand-400 group-hover:text-brand-600 transition-colors pointer-events-none"></i>
                     </div>
                 </div>
             </div>
 
             <div class="flex items-center gap-5">
-                <button onclick="showToast('Sistem berjalan sempurna! 🚀', 'info')" class="w-14 h-14 bg-white rounded-full flex items-center justify-center text-brand-400 hover:text-brand-600 hover:bg-brand-50 transition-all border-4 border-brand-200 shadow-sm relative btn-smooth">
-                    <i data-lucide="bell" class="w-6 h-6"></i>
-                    <span class="absolute top-2 right-2 w-3.5 h-3.5 bg-accent-400 rounded-full border-2 border-white"></span>
-                </button>
-                <div class="h-14 w-14 bg-gradient-to-tr from-brand-200 to-accent-100 text-brand-800 rounded-full flex items-center justify-center font-black text-xl border-4 border-white shadow-md ring-2 ring-brand-200 cursor-pointer btn-smooth hover:scale-105 transition-transform">
-                    U
-                </div>
+                <button onclick="showToast('Semua sistem optimal!', 'info')" class="w-14 h-14 bg-white rounded-full flex items-center justify-center text-brand-400 hover:text-brand-600 border-4 border-brand-200 shadow-sm relative btn-smooth"><i data-lucide="bell" class="w-6 h-6"></i><span class="absolute top-2 right-2 w-3.5 h-3.5 bg-accent-400 rounded-full border-2 border-white"></span></button>
+                <div class="h-14 w-14 bg-gradient-to-tr from-brand-200 to-accent-100 text-brand-800 rounded-full flex items-center justify-center font-black text-xl border-4 border-white shadow-md btn-smooth">U</div>
             </div>
         </header>
 
         <div id="main-content" class="p-4 md:p-10 flex-1 overflow-y-auto pb-28 md:pb-10"></div>
     </main>
 
-    <nav class="md:hidden glass border-t-4 border-brand-200 fixed bottom-0 w-full z-50 px-2 py-3 flex justify-between items-center shadow-[0_-10px_30px_rgba(var(--color-brand-500),0.2)] pb-safe" id="mobile-nav"></nav>
+    <nav class="md:hidden glass border-t-4 border-brand-200 fixed bottom-0 w-full z-50 px-2 py-3 flex justify-between items-center pb-safe" id="mobile-nav"></nav>
 
-    <!-- Facebook SDK Asli -->
+    <!-- Facebook SDK -->
     <script>
-        window.fbAsyncInit = function() {
-            FB.init({
-                appId      : 'MASUKKAN_APP_ID_FACEBOOK_ANDA_DISINI',
-                cookie     : true,
-                xfbml      : true,
-                version    : 'v19.0'
-            });
-            console.log("📘 Facebook SDK Berhasil Dimuat!");
-        };
-
-        (function(d, s, id){
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) {return;}
-            js = d.createElement(s); js.id = id;
-            js.src = "https://connect.facebook.net/id_ID/sdk.js";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
+        window.fbAsyncInit = function() { FB.init({ appId: 'MASUKKAN_APP_ID', cookie: true, xfbml: true, version: 'v19.0' }); };
+        (function(d, s, id){ var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) {return;} js = d.createElement(s); js.id = id; js.src = "https://connect.facebook.net/id_ID/sdk.js"; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'facebook-jssdk'));
     </script>
 
-    <!-- Inisialisasi Firebase Database -->
+    <!-- FIREBASE INTEGRATION MODULE -->
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-analytics.js";
-        import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, updateProfile, onAuthStateChanged, signOut, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, updateProfile, signOut, GoogleAuthProvider, signInWithPopup, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
         import { getFirestore, doc, setDoc, getDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
-        // Konfigurasi Firebase Anda
-        const firebaseConfig = {
-            apiKey: "AIzaSyCGs467Wb2uZfdFReMi2gjoa-77HXiEpdQ",
-            authDomain: "market-place-kalimaja.firebaseapp.com",
-            projectId: "market-place-kalimaja",
-            storageBucket: "market-place-kalimaja.firebasestorage.app",
-            messagingSenderId: "58576818321",
-            appId: "1:58576818321:web:b4eb5d25413a8b14776f30",
-            measurementId: "G-JJ2C1PNKL1"
+        // Konfigurasi Database Anda
+        const firebaseConfig = { 
+            apiKey: "AIzaSyCGs467Wb2uZfdFReMi2gjoa-77HXiEpdQ", 
+            authDomain: "market-place-kalimaja.firebaseapp.com", 
+            projectId: "market-place-kalimaja", 
+            storageBucket: "market-place-kalimaja.firebasestorage.app", 
+            messagingSenderId: "58576818321", 
+            appId: "1:58576818321:web:b4eb5d25413a8b14776f30" 
         };
-
         const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
         
-        window.firebaseAuth = { auth: getAuth(app), signInWithEmailAndPassword, createUserWithEmailAndPassword, updateProfile, signOut, GoogleAuthProvider, signInWithPopup };
+        // Ekspor ke window global untuk diakses oleh script utama
+        window.firebaseAuth = { auth: getAuth(app), signInWithEmailAndPassword, createUserWithEmailAndPassword, updateProfile, signOut, GoogleAuthProvider, signInWithPopup, onAuthStateChanged };
         window.firebaseDb = { db: getFirestore(app), doc, setDoc, getDoc };
-        
-        console.log("🔥 Firebase Auth & Firestore Berhasil Terhubung!");
     </script>
 
-    <!-- LOGIKA UTAMA APLIKASI -->
+    <!-- MAIN LOGIC (Dengan Perbaikan Anti-Blank) -->
     <script>
+        // Set tema tersimpan
         const savedTheme = localStorage.getItem('sosialhub-theme') || 'pink';
         document.documentElement.setAttribute('data-theme', savedTheme);
 
         let activeTab = localStorage.getItem('sosialhub-activeTab') || 'dashboard';
         let currentCompanyId = localStorage.getItem('sosialhub-companyId') || 'klien1';
         let loginRole = localStorage.getItem('sosialhub-role') || 'admin';
-        let isLoggedIn = localStorage.getItem('sosialhub-loggedIn') === 'true';
         let attachedMedia = false; 
-
-        if (isLoggedIn) {
-            document.getElementById('login-screen').style.display = 'none';
-        }
         
-        // Data Dummy Awal
         let database = {
-            klien1: {
-                name: '🏢 Perusahaan Pribadi', accounts: { facebook: 1, twitter: 0, instagram: 1, linkedin: 1, youtube: 0, tiktok: 1, whatsapp: 0, telegram: 0, pinterest: 0, threads: 0 },
-                feed: [{ id: 1, platform: 'facebook', text: 'Koleksi terbaru kami sudah rilis! Yuk cek link di bio sebelum kehabisan ✨', media: true, time: '2 jam yang lalu', status: 'Mengudara' }],
-                scheduled: []
-            },
-            klien2: {
-                name: '🍔 Klien Restoran', accounts: { facebook: 3, twitter: 1, instagram: 2, linkedin: 0, youtube: 1, tiktok: 1, whatsapp: 1, telegram: 1, pinterest: 0, threads: 1 },
-                feed: [{ id: 2, platform: 'twitter', text: 'Laper jam segini? Promo diskon 50% untuk menu ayam geprek khusus malam ini! 🍗🔥', media: false, time: '1 jam yang lalu', status: 'Mengudara' }],
-                scheduled: []
-            }
+            klien1: { name: '🏢 Perusahaan Pribadi', accounts: { facebook: 1, instagram: 1, linkedin: 1, tiktok: 1 }, feed: [], scheduled: [] },
+            klien2: { name: '🍔 Klien Restoran', accounts: { facebook: 3, twitter: 1, instagram: 2, tiktok: 1, whatsapp: 1 }, feed: [], scheduled: [] }
         };
 
+        // --- FIX ANTI BLANK SCREEN ---
+        // Kita gunakan poling (mengecek berkala) memastikan Firebase sudah siap dimuat dari Module
+        window.onload = () => {
+            const checkFirebase = setInterval(() => {
+                if (window.firebaseAuth && window.firebaseDb) {
+                    clearInterval(checkFirebase);
+                    
+                    // Hilangkan indikator loading, tampilkan form
+                    document.getElementById('auth-loading').classList.add('hidden');
+                    document.getElementById('auth-forms').classList.remove('hidden');
+
+                    // ON AUTH STATE CHANGED (Solusi Permanen untuk Sesi!)
+                    window.firebaseAuth.onAuthStateChanged(window.firebaseAuth.auth, async (user) => {
+                        const loginScreen = document.getElementById('login-screen');
+                        
+                        if (user) {
+                            // PENGGUNA SUDAH MASUK (LOGIN)
+                            // 1. Ambil data dari Firestore
+                            try {
+                                const { db, doc, getDoc } = window.firebaseDb;
+                                const docSnap = await getDoc(doc(db, "agensi_data", user.uid));
+                                if (docSnap.exists()) {
+                                    database = docSnap.data().data_klien;
+                                }
+                            } catch(e) { console.error("Data tidak ditemukan, memakai default.", e); }
+
+                            // 2. Sembunyikan Layar Login
+                            loginScreen.classList.add('opacity-0'); 
+                            setTimeout(() => {
+                                loginScreen.style.display = 'none'; 
+                                applyRoleBasedAccess(); // Kunci/Buka Akses Sesuai Role
+                                init(); // RENDER DASBOR (Mencegah Blank Screen)
+                            }, 500);
+                        } else {
+                            // PENGGUNA BELUM MASUK (Tampilkan Layar Login)
+                            loginScreen.style.display = 'flex';
+                            setTimeout(() => { loginScreen.classList.remove('opacity-0'); }, 50);
+                        }
+                    });
+                }
+            }, 50); // Mengecek setiap 50 milidetik
+        };
+
+        // Fungsi Pembatasan Akses Admin vs Klien
+        function applyRoleBasedAccess() {
+            const selDesktop = document.getElementById('company-selector');
+            const selMobile = document.getElementById('mobile-company-selector');
+            const lockIcon = document.getElementById('client-lock-icon');
+            const mobLockIcon = document.getElementById('mobile-client-lock-icon');
+            const chevronIcon = document.getElementById('company-chevron');
+
+            if(loginRole === 'client') {
+                // Kunci Dropdown untuk Klien
+                changeCompany(Object.keys(database)[0]);
+                selDesktop.disabled = true; selMobile.disabled = true;
+                selDesktop.classList.add('bg-slate-50', 'text-slate-500', 'border-slate-200', 'pl-10'); 
+                selDesktop.classList.remove('hover:bg-brand-50', 'cursor-pointer');
+                selMobile.classList.add('bg-slate-50', 'text-slate-500', 'pl-8');
+                
+                lockIcon.classList.remove('hidden'); mobLockIcon.classList.remove('hidden');
+                chevronIcon.classList.add('hidden');
+                
+                // Alihkan tab otomatis jika klien mencoba mengakali url ke menu billing
+                if(activeTab === 'billing') activeTab = 'dashboard';
+            } else {
+                // Buka Kendali untuk Admin
+                selDesktop.disabled = false; selMobile.disabled = false;
+                selDesktop.classList.remove('bg-slate-50', 'text-slate-500', 'border-slate-200', 'pl-10');
+                selDesktop.classList.add('hover:bg-brand-50', 'cursor-pointer');
+                selMobile.classList.remove('bg-slate-50', 'text-slate-500', 'pl-8');
+                
+                lockIcon.classList.add('hidden'); mobLockIcon.classList.add('hidden');
+                chevronIcon.classList.remove('hidden');
+            }
+        }
+
         async function saveToFirestore() {
-            if (!isLoggedIn || !window.firebaseAuth.auth.currentUser) return;
-            try {
-                const uid = window.firebaseAuth.auth.currentUser.uid;
-                const { db, doc, setDoc } = window.firebaseDb;
-                await setDoc(doc(db, "agensi_data", uid), { data_klien: database });
-                console.log("💾 Berhasil menyimpan ke Firestore");
-            } catch (error) { console.error("Gagal simpan ke Firestore:", error); }
+            if (!window.firebaseAuth?.auth?.currentUser) return;
+            try { await window.firebaseDb.setDoc(window.firebaseDb.doc(window.firebaseDb.db, "agensi_data", window.firebaseAuth.auth.currentUser.uid), { data_klien: database }); } catch(e) {}
         }
 
         function toggleAuthView(view) {
             const loginView = document.getElementById('view-login'), registerView = document.getElementById('view-register');
             const title = document.getElementById('auth-title'), subtitle = document.getElementById('auth-subtitle');
-            if (view === 'register') { loginView.classList.add('hidden'); registerView.classList.remove('hidden'); title.innerText = 'Buat Akun'; subtitle.innerText = 'Mulai perjalanan Agensi Anda'; } 
-            else { registerView.classList.add('hidden'); loginView.classList.remove('hidden'); title.innerText = 'Selamat Datang'; subtitle.innerText = 'Pintu masuk ke SosialHub'; }
+            if (view === 'register') { 
+                loginView.classList.add('hidden'); registerView.classList.remove('hidden'); 
+                title.innerText = 'Buat Akun'; subtitle.innerText = 'Mulai perjalanan Agensi Anda';
+            } else { 
+                registerView.classList.add('hidden'); loginView.classList.remove('hidden'); 
+                title.innerText = 'Selamat Datang'; subtitle.innerText = 'Pintu masuk ke SosialHub';
+            }
         }
 
         function switchLoginRole(role) {
             loginRole = role;
-            const slider = document.getElementById('login-slider');
-            const btnAdmin = document.getElementById('btn-role-admin'), btnClient = document.getElementById('btn-role-client');
-            if (role === 'admin') { slider.style.transform = 'translateX(0)'; btnAdmin.classList.replace('text-brand-500', 'text-brand-900'); btnClient.classList.replace('text-brand-900', 'text-brand-500'); } 
+            const slider = document.getElementById('login-slider'), btnAdmin = document.getElementById('btn-role-admin'), btnClient = document.getElementById('btn-role-client');
+            if (role === 'admin') { slider.style.transform = 'translateX(0)'; btnAdmin.classList.replace('text-brand-500', 'text-brand-900'); btnClient.classList.replace('text-brand-900', 'text-brand-500'); }
             else { slider.style.transform = 'translateX(100%)'; btnAdmin.classList.replace('text-brand-900', 'text-brand-500'); btnClient.classList.replace('text-brand-500', 'text-brand-900'); }
         }
 
-        async function processLoginSuccess(user, userName) {
-            const { db, doc, getDoc, setDoc } = window.firebaseDb;
-            const docRef = doc(db, "agensi_data", user.uid);
-            const docSnap = await getDoc(docRef);
-
-            if (docSnap.exists()) database = docSnap.data().data_klien;
-            else { saveToFirestore(); } // Simpan default jika user baru
-
-            updateCompanyDropdowns();
-            const loginScreen = document.getElementById('login-screen');
-            loginScreen.classList.add('opacity-0'); 
-            
-            setTimeout(() => {
-                loginScreen.style.display = 'none'; 
-                isLoggedIn = true;
-                localStorage.setItem('sosialhub-loggedIn', 'true');
-                localStorage.setItem('sosialhub-role', loginRole);
-                showToast(`Selamat datang, ${userName}! 🎉`, 'success');
-                
-                // === LOGIKA ROLE-BASED ACCESS CONTROL (RBAC) ===
-                const selDesktop = document.getElementById('company-selector');
-                const selMobile = document.getElementById('mobile-company-selector');
-                const lockIcon = document.getElementById('client-lock-icon');
-                const mobLockIcon = document.getElementById('mobile-client-lock-icon');
-                const chevronIcon = document.getElementById('company-chevron');
-
-                if(loginRole === 'client') {
-                    // Klien: Kunci akses ke 1 klien, disable dropdown, ubah style jadi terkunci
-                    changeCompany(Object.keys(database)[0]);
-                    selDesktop.disabled = true; selMobile.disabled = true;
-                    
-                    selDesktop.classList.add('bg-slate-50', 'text-slate-500', 'border-slate-200', 'pl-10');
-                    selDesktop.classList.remove('hover:bg-brand-50', 'cursor-pointer');
-                    selMobile.classList.add('bg-slate-50', 'text-slate-500', 'pl-8');
-                    
-                    lockIcon.classList.remove('hidden'); mobLockIcon.classList.remove('hidden');
-                    chevronIcon.classList.add('hidden');
-                    
-                    // Keamanan ekstra: lempar ke dasbor jika buka billing
-                    if(activeTab === 'billing') activeTab = 'dashboard';
-                } else {
-                    // Admin: Buka akses
-                    localStorage.setItem('sosialhub-companyId', currentCompanyId);
-                    selDesktop.disabled = false; selMobile.disabled = false;
-                    
-                    selDesktop.classList.remove('bg-slate-50', 'text-slate-500', 'border-slate-200', 'pl-10');
-                    selDesktop.classList.add('hover:bg-brand-50', 'cursor-pointer');
-                    selMobile.classList.remove('bg-slate-50', 'text-slate-500', 'pl-8');
-                    
-                    lockIcon.classList.add('hidden'); mobLockIcon.classList.add('hidden');
-                    chevronIcon.classList.remove('hidden');
-                }
-                
-                init(); 
-            }, 500);
-        }
-
         async function handleLogin(e) {
-            e.preventDefault();
-            const btn = document.getElementById('submit-login'); btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i>...'; btn.classList.add('pointer-events-none');
+            e.preventDefault(); const btn = document.getElementById('submit-login'); btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Memverifikasi...'; btn.classList.add('pointer-events-none');
             try {
-                const cred = await window.firebaseAuth.signInWithEmailAndPassword(window.firebaseAuth.auth, document.getElementById('login-email').value, document.getElementById('login-password').value);
-                await processLoginSuccess(cred.user, cred.user.displayName || (loginRole === 'admin' ? 'Admin Agensi' : 'Klien'));
-            } catch (err) {
-                showToast("Gagal masuk! Cek email & sandi Anda.", 'error');
-                btn.innerHTML = 'Masuk Dasbor <i data-lucide="arrow-right" class="w-5 h-5"></i>'; btn.classList.remove('pointer-events-none');
+                localStorage.setItem('sosialhub-role', loginRole); // Simpan pilihan role
+                await window.firebaseAuth.signInWithEmailAndPassword(window.firebaseAuth.auth, document.getElementById('login-email').value, document.getElementById('login-password').value);
+                showToast(`Berhasil Masuk! Memuat dasbor... 🎉`, 'success');
+                // Tidak perlu hide secara manual, karena onAuthStateChanged akan menanganinya di atas!
+            } catch (err) { 
+                showToast("Gagal Masuk! Cek email/sandi.", 'error'); 
+                btn.innerHTML = 'Masuk Dasbor <i data-lucide="arrow-right" class="w-5 h-5"></i>'; btn.classList.remove('pointer-events-none'); 
             }
         }
 
         async function handleRegister(e) {
-            e.preventDefault();
-            const btn = document.getElementById('submit-register'); btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i>...'; btn.classList.add('pointer-events-none');
+            e.preventDefault(); const btn = document.getElementById('submit-register'); btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Mendaftarkan...'; btn.classList.add('pointer-events-none');
             try {
                 const cred = await window.firebaseAuth.createUserWithEmailAndPassword(window.firebaseAuth.auth, document.getElementById('register-email').value, document.getElementById('register-password').value);
                 await window.firebaseAuth.updateProfile(cred.user, { displayName: document.getElementById('register-name').value });
                 await window.firebaseDb.setDoc(window.firebaseDb.doc(window.firebaseDb.db, "agensi_data", cred.user.uid), { data_klien: database });
-                showToast('Akun berhasil dibuat! Silakan masuk.', 'success');
-                document.getElementById('login-email').value = document.getElementById('register-email').value;
-                toggleAuthView('login');
-            } catch (err) {
-                showToast("Gagal mendaftar! Mungkin email sudah terpakai.", 'error');
-                btn.innerHTML = 'Buat Akun Gratis <i data-lucide="user-plus" class="w-5 h-5"></i>'; btn.classList.remove('pointer-events-none');
+                showToast('Akun dibuat! Silakan masuk.', 'success'); toggleAuthView('login');
+            } catch (err) { 
+                showToast("Gagal Mendaftar! Email mungkin sudah terpakai.", 'error'); 
+                btn.innerHTML = 'Buat Akun Gratis <i data-lucide="user-plus" class="w-5 h-5"></i>'; btn.classList.remove('pointer-events-none'); 
             }
         }
 
         async function handleGoogleAuth() {
             try {
-                const provider = new window.firebaseAuth.GoogleAuthProvider();
-                showToast("Membuka Google...", "info");
-                const result = await window.firebaseAuth.signInWithPopup(window.firebaseAuth.auth, provider);
-                await processLoginSuccess(result.user, result.user.displayName);
-            } catch (error) { showToast("Gagal login dengan Google.", 'error'); }
+                localStorage.setItem('sosialhub-role', loginRole);
+                const result = await window.firebaseAuth.signInWithPopup(window.firebaseAuth.auth, new window.firebaseAuth.GoogleAuthProvider());
+                showToast(`Berhasil Masuk dengan Google! 🎉`, 'success');
+            } catch (error) { showToast("Login Google Dibatalkan.", 'error'); }
         }
 
         async function handleLogout() {
-            try {
-                if(window.firebaseAuth) await window.firebaseAuth.signOut(window.firebaseAuth.auth);
-                localStorage.removeItem('sosialhub-loggedIn'); localStorage.removeItem('sosialhub-role'); localStorage.removeItem('sosialhub-activeTab');
-                window.location.reload();
-            } catch (e) { showToast('Gagal keluar.', 'error'); }
+            try { 
+                if(window.firebaseAuth) await window.firebaseAuth.signOut(window.firebaseAuth.auth); 
+                window.location.reload(); 
+            } catch (e) {}
         }
 
         const platformConfig = {
-            facebook: { name: 'Facebook', icon: 'fa-brands fa-facebook-f', colorClass: 'color-fb', bgClass: 'bg-fb' },
-            twitter:  { name: 'X (Twitter)', icon: 'fa-brands fa-x-twitter', colorClass: 'color-tw', bgClass: 'bg-tw' },
-            instagram:{ name: 'Instagram', icon: 'fa-brands fa-instagram', colorClass: 'color-ig', bgClass: 'bg-ig' },
-            linkedin: { name: 'LinkedIn', icon: 'fa-brands fa-linkedin-in', colorClass: 'color-li', bgClass: 'bg-li' },
-            youtube:  { name: 'YouTube', icon: 'fa-brands fa-youtube', colorClass: 'color-yt', bgClass: 'bg-yt' },
-            tiktok:   { name: 'TikTok', icon: 'fa-brands fa-tiktok', colorClass: 'color-tk', bgClass: 'bg-tk' },
-            whatsapp: { name: 'WhatsApp', icon: 'fa-brands fa-whatsapp', colorClass: 'color-wa', bgClass: 'bg-wa' },
-            telegram: { name: 'Telegram', icon: 'fa-brands fa-telegram-plane', colorClass: 'color-tg', bgClass: 'bg-tg' },
-            pinterest:{ name: 'Pinterest', icon: 'fa-brands fa-pinterest-p', colorClass: 'color-pt', bgClass: 'bg-pt' },
-            threads:  { name: 'Threads', icon: 'fa-brands fa-threads', colorClass: 'color-th', bgClass: 'bg-th' }
+            facebook: { name: 'Facebook', icon: 'fa-brands fa-facebook-f', bgClass: 'bg-fb' },
+            twitter:  { name: 'X', icon: 'fa-brands fa-x-twitter', bgClass: 'bg-tw' },
+            instagram:{ name: 'Instagram', icon: 'fa-brands fa-instagram', bgClass: 'bg-ig' },
+            linkedin: { name: 'LinkedIn', icon: 'fa-brands fa-linkedin-in', bgClass: 'bg-li' },
+            youtube:  { name: 'YouTube', icon: 'fa-brands fa-youtube', bgClass: 'bg-yt' },
+            tiktok:   { name: 'TikTok', icon: 'fa-brands fa-tiktok', bgClass: 'bg-tk' },
+            whatsapp: { name: 'WhatsApp', icon: 'fa-brands fa-whatsapp', bgClass: 'bg-wa' },
+            telegram: { name: 'Telegram', icon: 'fa-brands fa-telegram-plane', bgClass: 'bg-tg' }
         };
 
         const tabs = [
@@ -543,60 +404,64 @@
         ];
 
         function updateCompanyDropdowns() {
-            const selectorDesktop = document.getElementById('company-selector');
-            const selectorMobile = document.getElementById('mobile-company-selector');
-            selectorDesktop.innerHTML = ''; selectorMobile.innerHTML = '';
-
-            for (const key in database) {
-                const name = database[key].name || `🏢 ${key.toUpperCase()}`;
-                selectorDesktop.add(new Option(name, key)); selectorMobile.add(new Option(name, key));
-            }
+            const sDesk = document.getElementById('company-selector'), sMob = document.getElementById('mobile-company-selector');
+            sDesk.innerHTML = ''; sMob.innerHTML = '';
+            for (const key in database) { const n = database[key].name; sDesk.add(new Option(n, key)); sMob.add(new Option(n, key)); }
             if(!database[currentCompanyId]) currentCompanyId = Object.keys(database)[0];
-            selectorDesktop.value = currentCompanyId; selectorMobile.value = currentCompanyId;
+            sDesk.value = currentCompanyId; sMob.value = currentCompanyId;
         }
 
         function init() {
-            if(!isLoggedIn) return; 
             updateCompanyDropdowns(); renderSidebar(); renderMobileNav(); renderApp();
         }
 
-        function changeTheme(themeName) {
-            document.documentElement.setAttribute('data-theme', themeName);
-            localStorage.setItem('sosialhub-theme', themeName);
-            showToast(`Tema berubah menjadi ${themeName}! 🎨`, 'success');
-            if(activeTab === 'settings') renderApp();
+        function changeTheme(t) { document.documentElement.setAttribute('data-theme', t); localStorage.setItem('sosialhub-theme', t); if(activeTab === 'settings') renderApp(); }
+        function changeCompany(id) { currentCompanyId = id; localStorage.setItem('sosialhub-companyId', id); document.getElementById('company-selector').value = id; renderApp(); }
+        function changeTab(id) { activeTab = id; localStorage.setItem('sosialhub-activeTab', id); renderSidebar(); renderMobileNav(); renderApp(); window.scrollTo(0,0); }
+
+        function showToast(m, t = 'success') {
+            const c = document.getElementById('toast-container'), el = document.createElement('div');
+            el.className = `toast ${t==='success'?'bg-emerald-500':t==='error'?'bg-rose-500':'bg-brand-500'}`; el.innerHTML = m;
+            c.appendChild(el); setTimeout(() => el.remove(), 4000);
         }
 
-        function changeCompany(companyId) {
-            currentCompanyId = companyId;
-            localStorage.setItem('sosialhub-companyId', companyId); 
-            document.getElementById('company-selector').value = companyId;
-            document.getElementById('mobile-company-selector').value = companyId;
-            attachedMedia = false; 
-            showToast('Berpindah Ruang Kerja... 🚀', 'info');
-            setTimeout(() => { renderApp(); }, 200);
+        function renderSidebar() {
+            document.getElementById('nav-menu').innerHTML = ''; document.getElementById('nav-footer').innerHTML = '';
+            let visibleTabs = loginRole === 'client' ? tabs.filter(t => t.id !== 'billing') : tabs;
+
+            visibleTabs.forEach(t => {
+                const a = activeTab === t.id ? 'bg-gradient-to-r from-brand-500 to-brand-600 text-white font-black scale-105 shadow-lg shadow-brand-500/40' : 'text-brand-900 font-extrabold hover:bg-brand-100 btn-smooth';
+                const i = activeTab === t.id ? 'text-white' : 'text-brand-400';
+                const b = t.badge ? `<span class="bg-gradient-to-r from-accent-400 to-yellow-400 text-white text-[10px] uppercase tracking-widest font-black px-2.5 py-0.5 rounded-full ml-auto shadow-sm">${t.badge}</span>` : '';
+                const h = `<button onclick="changeTab('${t.id}')" class="w-full flex items-center px-4 py-3.5 rounded-2xl transition-all ${a}"><i data-lucide="${t.icon}" class="w-5 h-5 mr-3 ${i}"></i>${t.label}${b}</button>`;
+                if (t.section === 'main') document.getElementById('nav-menu').innerHTML += h; else document.getElementById('nav-footer').innerHTML += h;
+            });
+            document.getElementById('header-title').innerText = tabs.find(t => t.id === activeTab)?.label || 'Dasbor';
+            lucide.createIcons();
         }
 
-        function changeTab(tabId) {
-            activeTab = tabId;
-            localStorage.setItem('sosialhub-activeTab', tabId);
-            renderSidebar(); renderMobileNav(); renderApp();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+        function renderMobileNav() {
+            const mNav = document.getElementById('mobile-nav'); mNav.innerHTML = '';
+            let mobileTabs = tabs.filter(t => t.id !== 'billing').slice(0, 5);
+            if (loginRole === 'client') mobileTabs = mobileTabs.filter(t => t.id !== 'settings'); 
+
+            mobileTabs.forEach(t => {
+                const a = activeTab === t.id ? 'text-brand-600 scale-110 -translate-y-2' : 'text-slate-400 hover:text-brand-400';
+                mNav.innerHTML += `<button onclick="changeTab('${t.id}')" class="flex flex-col items-center p-2 transition-all duration-300 relative ${a}">${activeTab === t.id ? '<div class="absolute -top-3 w-1.5 h-1.5 bg-brand-500 rounded-full shadow-[0_0_8px_var(--color-brand-500)]"></div>' : ''}<i data-lucide="${t.icon}" class="w-6 h-6 mb-1"></i><span class="text-[10px] font-extrabold">${t.label.split(' ')[0]}</span></button>`;
+            });
+            lucide.createIcons();
         }
 
-        function showToast(message, type = 'success') {
-            const container = document.getElementById('toast-container');
-            const toast = document.createElement('div');
-            let bgClass = 'bg-brand-900'; let icon = '🔔';
-            if(type === 'success') { bgClass = 'bg-emerald-500'; icon = '✅'; }
-            if(type === 'error') { bgClass = 'bg-rose-500'; icon = '❌'; }
-            if(type === 'warning') { bgClass = 'bg-accent-400'; icon = '⚠️'; }
-            if(type === 'info') { bgClass = 'bg-brand-500'; icon = '💡'; }
-
-            toast.className = `toast ${bgClass}`;
-            toast.innerHTML = `<span class="mr-2">${icon}</span> ${message}`;
-            container.appendChild(toast);
-            setTimeout(() => { toast.remove(); }, 4000);
+        function renderApp() {
+            const c = document.getElementById('main-content');
+            if(!database[currentCompanyId]) return;
+            if (activeTab === 'dashboard') c.innerHTML = getDashboardHTML();
+            else if (activeTab === 'schedule') c.innerHTML = getScheduleHTML();
+            else if (activeTab === 'analytics') c.innerHTML = getAnalyticsHTML();
+            else if (activeTab === 'integrations') c.innerHTML = getIntegrationsHTML();
+            else if (activeTab === 'billing') c.innerHTML = getBillingHTML();
+            else if (activeTab === 'settings') c.innerHTML = getSettingsHTML();
+            lucide.createIcons();
         }
 
         function simulateMediaUpload() { attachedMedia = true; showToast('Foto dilampirkan! 📸', 'success'); renderApp(); }
@@ -614,6 +479,7 @@
             if (isSchedule) {
                 showToast('Masuk ke antrean jadwal! 🗓️', 'success');
                 currentData.scheduled.unshift({ id: Date.now(), platform: activePlatforms[0], text: text || 'Postingan Media', time: 'Besok' });
+                saveToFirestore();
             } else {
                 showToast('Menerbangkan postingan... 🚀', 'info');
                 setTimeout(() => {
@@ -653,107 +519,39 @@
             showToast(`Koneksi ${platformConfig[platform].name} diputus. 🔌`, 'warning'); renderApp();
         }
 
-        function renderSidebar() {
-            const navMenu = document.getElementById('nav-menu'); const navFooter = document.getElementById('nav-footer');
-            navMenu.innerHTML = ''; navFooter.innerHTML = '';
-            
-            // FILTER ROLE
-            let visibleTabs = tabs;
-            if (loginRole === 'client') visibleTabs = tabs.filter(t => t.id !== 'billing');
-
-            visibleTabs.forEach(tab => {
-                const isActive = activeTab === tab.id;
-                const activeClass = isActive ? 'bg-gradient-to-r from-brand-500 to-brand-600 text-white font-black shadow-lg shadow-brand-500/40 scale-105 border-none' : 'text-brand-900 font-extrabold hover:bg-brand-100 hover:text-brand-700 btn-smooth';
-                const iconClass = isActive ? 'text-white' : 'text-brand-400';
-                const badgeHtml = tab.badge ? `<span class="bg-gradient-to-r from-accent-400 to-yellow-400 text-white text-[10px] uppercase tracking-widest font-black px-2.5 py-0.5 rounded-full ml-auto shadow-sm">${tab.badge}</span>` : '';
-
-                const html = `<button onclick="changeTab('${tab.id}')" class="w-full flex items-center px-4 py-3.5 rounded-2xl transition-all ${activeClass}"><div class="flex items-center gap-3"><i data-lucide="${tab.icon}" class="w-5 h-5 ${iconClass}"></i>${tab.label}</div>${badgeHtml}</button>`;
-                if (tab.section === 'main') navMenu.innerHTML += html; else navFooter.innerHTML += html;
-            });
-            document.getElementById('header-title').innerText = tabs.find(t => t.id === activeTab).label;
-        }
-
-        function renderMobileNav() {
-            const mNav = document.getElementById('mobile-nav'); mNav.innerHTML = '';
-            
-            // FILTER ROLE
-            let mobileTabs = tabs.filter(t => t.id !== 'billing').slice(0, 5);
-            if (loginRole === 'client') mobileTabs = mobileTabs.filter(t => t.id !== 'settings'); 
-
-            mobileTabs.forEach(tab => {
-                const isActive = activeTab === tab.id;
-                const activeClass = isActive ? 'text-brand-600 scale-110 -translate-y-2' : 'text-slate-400 hover:text-brand-400';
-                mNav.innerHTML += `<button onclick="changeTab('${tab.id}')" class="flex flex-col items-center p-2 transition-all duration-300 relative ${activeClass}">${isActive ? '<div class="absolute -top-3 w-1.5 h-1.5 bg-brand-500 rounded-full shadow-[0_0_8px_var(--color-brand-500)]"></div>' : ''}<i data-lucide="${tab.icon}" class="w-6 h-6 mb-1 ${isActive ? 'fill-brand-100' : ''}"></i><span class="text-[10px] font-extrabold">${tab.label.split(' ')[0]}</span></button>`;
-            });
-            lucide.createIcons();
-        }
-
-        function renderApp() {
-            const contentDiv = document.getElementById('main-content');
-            if(!database[currentCompanyId]) return; 
-            
-            if (activeTab === 'dashboard') contentDiv.innerHTML = getDashboardHTML();
-            else if (activeTab === 'schedule') contentDiv.innerHTML = getScheduleHTML();
-            else if (activeTab === 'analytics') contentDiv.innerHTML = getAnalyticsHTML();
-            else if (activeTab === 'integrations') contentDiv.innerHTML = getIntegrationsHTML();
-            else if (activeTab === 'billing') contentDiv.innerHTML = getBillingHTML();
-            else if (activeTab === 'settings') contentDiv.innerHTML = getSettingsHTML();
-            lucide.createIcons();
-        }
-
+        // Tampilan Tiap Tab
         function getDashboardHTML() {
             const data = database[currentCompanyId];
-            const totalClients = Object.keys(database).length;
-            
-            // HANYA ADMIN
             const adminBanner = loginRole === 'admin' ? `
                 <div class="bg-gradient-to-r from-brand-900 to-brand-700 rounded-[2rem] p-5 md:p-6 mb-8 text-white flex flex-col md:flex-row md:items-center justify-between gap-4 shadow-lg border-4 border-white animate-fade-in relative overflow-hidden">
                     <div class="absolute -right-10 -top-10 opacity-20"><i data-lucide="building" class="w-48 h-48"></i></div>
                     <div class="flex items-center gap-4 relative z-10">
                         <div class="bg-white/20 p-3 rounded-2xl backdrop-blur-sm"><i data-lucide="building" class="w-8 h-8 text-white"></i></div>
-                        <div>
-                            <h4 class="font-bold text-sm text-brand-200 uppercase tracking-wider mb-0.5">Mode Admin Agensi</h4>
-                            <p class="font-black text-xl">Anda sedang mengelola ${totalClients} Klien Aktif 🔥</p>
-                        </div>
+                        <div><h4 class="font-bold text-sm text-brand-200 uppercase tracking-wider mb-0.5">Mode Admin Agensi</h4><p class="font-black text-xl">Anda sedang mengelola ${Object.keys(database).length} Klien Aktif 🔥</p></div>
                     </div>
-                    <button onclick="changeTab('settings')" class="px-6 py-3.5 bg-white text-brand-900 font-black rounded-2xl hover:scale-105 transition-transform btn-smooth shadow-md relative z-10 flex items-center justify-center gap-2">
-                        <i data-lucide="plus" class="w-5 h-5"></i> Tambah Klien Baru
-                    </button>
-                </div>
-            ` : '';
+                    <button onclick="changeTab('settings')" class="px-6 py-3.5 bg-white text-brand-900 font-black rounded-2xl hover:scale-105 transition-transform btn-smooth shadow-md relative z-10 flex items-center justify-center gap-2"><i data-lucide="plus" class="w-5 h-5"></i> Tambah Klien</button>
+                </div>` : '';
 
             return `
                 <div class="flex flex-col gap-8 animate-fade-in">
                     ${adminBanner}
-                    
-                    <!-- Kartu Stats -->
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div class="bg-gradient-to-br from-brand-600 to-brand-800 p-6 rounded-[2rem] shadow-[0_10px_30px_rgba(var(--color-brand-900),0.3)] border-4 border-brand-400 flex items-center gap-5 relative overflow-hidden group hover:-translate-y-1 transition-all">
-                            <div class="absolute -right-4 -top-4 w-24 h-24 bg-white opacity-10 rounded-full group-hover:scale-150 transition-transform duration-500"></div>
+                        <div class="bg-gradient-to-br from-brand-600 to-brand-800 p-6 rounded-[2rem] shadow-[0_10px_30px_rgba(var(--color-brand-900),0.3)] border-4 border-brand-400 flex items-center gap-5 relative overflow-hidden">
+                            <div class="absolute -right-4 -top-4 w-24 h-24 bg-white opacity-10 rounded-full"></div>
                             <div class="bg-white text-brand-600 w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 z-10 shadow-lg"><i data-lucide="users" class="w-7 h-7"></i></div>
-                            <div class="z-10">
-                                <h4 class="text-brand-100 text-sm font-extrabold mb-1 uppercase tracking-wider">Total Audiens</h4>
-                                <p class="text-4xl font-black text-white drop-shadow-md">125K</p>
-                            </div>
+                            <div class="z-10"><h4 class="text-brand-100 text-sm font-extrabold mb-1 uppercase tracking-wider">Total Audiens</h4><p class="text-4xl font-black text-white drop-shadow-md">125K</p></div>
                         </div>
-                        <div class="bg-gradient-to-br from-accent-400 to-orange-500 p-6 rounded-[2rem] shadow-lg border-4 border-white flex items-center gap-5 relative overflow-hidden group hover:-translate-y-1 transition-all">
-                            <div class="absolute -right-4 -top-4 w-24 h-24 bg-white opacity-20 rounded-full group-hover:scale-150 transition-transform duration-500"></div>
+                        <div class="bg-gradient-to-br from-accent-400 to-orange-500 p-6 rounded-[2rem] shadow-lg border-4 border-white flex items-center gap-5 relative overflow-hidden">
+                            <div class="absolute -right-4 -top-4 w-24 h-24 bg-white opacity-20 rounded-full"></div>
                             <div class="bg-white text-orange-500 w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 z-10 shadow-lg"><i data-lucide="send" class="w-7 h-7"></i></div>
-                            <div class="z-10">
-                                <h4 class="text-orange-100 text-sm font-extrabold mb-1 uppercase tracking-wider">Postingan Aktif</h4>
-                                <p class="text-4xl font-black text-white drop-shadow-md">${data.feed.length}</p>
-                            </div>
+                            <div class="z-10"><h4 class="text-orange-100 text-sm font-extrabold mb-1 uppercase tracking-wider">Postingan Aktif</h4><p class="text-4xl font-black text-white drop-shadow-md">${data.feed.length}</p></div>
                         </div>
-                        <div class="bg-gradient-to-br from-slate-800 to-slate-900 p-6 rounded-[2rem] shadow-lg border-4 border-slate-600 flex items-center gap-5 relative overflow-hidden group hover:-translate-y-1 transition-all">
+                        <div class="bg-gradient-to-br from-slate-800 to-slate-900 p-6 rounded-[2rem] shadow-lg border-4 border-slate-600 flex items-center gap-5 relative overflow-hidden">
                             <div class="bg-brand-500 text-white w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 z-10 shadow-lg"><i data-lucide="zap" class="w-7 h-7"></i></div>
-                            <div class="z-10">
-                                <h4 class="text-slate-400 text-sm font-extrabold mb-1 uppercase tracking-wider">Engagement</h4>
-                                <p class="text-4xl font-black text-white drop-shadow-md">8.4%</p>
-                            </div>
+                            <div class="z-10"><h4 class="text-slate-400 text-sm font-extrabold mb-1 uppercase tracking-wider">Engagement</h4><p class="text-4xl font-black text-white drop-shadow-md">8.4%</p></div>
                         </div>
                     </div>
 
-                    <!-- Composer Modern -->
                     <div class="glass p-6 md:p-8 rounded-[2.5rem]">
                         <div class="flex items-center gap-3 mb-5">
                             <div class="bg-gradient-to-r from-accent-400 to-brand-500 p-3 rounded-2xl text-white shadow-lg"><i data-lucide="pen-tool" class="w-6 h-6"></i></div>
@@ -783,36 +581,18 @@
                                     ${Object.keys(platformConfig).map(plat => {
                                         const cfg = platformConfig[plat];
                                         const count = data.accounts[plat] || 0;
-                                        
-                                        if(count > 0) {
-                                            return `
-                                            <div class="w-14 h-14 ${cfg.bgClass} rounded-2xl flex items-center justify-center shadow-lg animate-slide-up hover:scale-110 transition-all border-4 border-white relative">
-                                                <i class="${cfg.icon} text-3xl"></i>
-                                                ${count > 1 ? `<span class="absolute -top-2 -right-2 bg-slate-900 text-white text-[10px] min-w-[20px] h-5 px-1.5 rounded-full flex items-center justify-center font-black border-2 border-white shadow-sm">${count}</span>` : ''}
-                                            </div>`;
-                                        } else {
-                                            return `
-                                            <button onclick="changeTab('integrations'); showToast('Yuk sambungkan ${cfg.name} dulu! 🔌', 'info')" class="w-14 h-14 bg-slate-100 text-slate-400 rounded-2xl flex items-center justify-center shadow-inner animate-slide-up hover:bg-slate-200 hover:text-slate-600 transition-all border-2 border-slate-200 relative cursor-pointer group">
-                                                <i class="${cfg.icon} text-3xl"></i>
-                                                <span class="absolute -bottom-8 bg-slate-800 text-white text-[10px] px-2 py-1 rounded-lg font-bold opacity-0 group-hover:opacity-100 pointer-events-none whitespace-nowrap z-10 transition-opacity">Sambungkan</span>
-                                            </button>`;
-                                        }
+                                        if(count > 0) return `<div class="w-14 h-14 ${cfg.bgClass} rounded-2xl flex items-center justify-center shadow-lg animate-slide-up hover:scale-110 transition-all border-4 border-white relative"><i class="${cfg.icon} text-3xl"></i>${count > 1 ? `<span class="absolute -top-2 -right-2 bg-slate-900 text-white text-[10px] min-w-[20px] h-5 px-1.5 rounded-full flex items-center justify-center font-black border-2 border-white shadow-sm">${count}</span>` : ''}</div>`;
+                                        return `<button onclick="changeTab('integrations'); showToast('Yuk sambungkan ${cfg.name} dulu! 🔌', 'info')" class="w-14 h-14 bg-slate-100 text-slate-400 rounded-2xl flex items-center justify-center shadow-inner animate-slide-up hover:bg-slate-200 hover:text-slate-600 transition-all border-2 border-slate-200 relative cursor-pointer group"><i class="${cfg.icon} text-3xl"></i><span class="absolute -bottom-8 bg-slate-800 text-white text-[10px] px-2 py-1 rounded-lg font-bold opacity-0 group-hover:opacity-100 pointer-events-none whitespace-nowrap z-10 transition-opacity">Sambungkan</span></button>`;
                                     }).join('')}
                                 </div>
                             </div>
-
                             <div class="flex gap-3 w-full lg:w-auto">
-                                <button onclick="handlePost(true)" class="flex-1 lg:flex-none px-6 py-3.5 rounded-[1.5rem] font-extrabold text-brand-600 bg-white border-4 border-brand-200 hover:bg-brand-50 transition-all flex items-center justify-center gap-2 btn-smooth">
-                                    <i data-lucide="clock" class="w-5 h-5"></i> Nanti
-                                </button>
-                                <button onclick="handlePost(false)" class="flex-1 lg:flex-none flex items-center justify-center gap-2 bg-gradient-to-r from-brand-500 to-accent-400 text-white px-8 py-3.5 rounded-[1.5rem] font-black hover:from-brand-600 transition-all duration-300 shadow-[0_10px_25px_rgba(var(--color-brand-500),0.4)] btn-smooth text-lg">
-                                    Posting <i data-lucide="rocket" class="w-5 h-5"></i>
-                                </button>
+                                <button onclick="handlePost(true)" class="flex-1 lg:flex-none px-6 py-3.5 rounded-[1.5rem] font-extrabold text-brand-600 bg-white border-4 border-brand-200 hover:bg-brand-50 transition-all flex items-center justify-center gap-2 btn-smooth"><i data-lucide="clock" class="w-5 h-5"></i> Nanti</button>
+                                <button onclick="handlePost(false)" class="flex-1 lg:flex-none flex items-center justify-center gap-2 bg-gradient-to-r from-brand-500 to-accent-400 text-white px-8 py-3.5 rounded-[1.5rem] font-black hover:from-brand-600 transition-all duration-300 shadow-[0_10px_25px_rgba(var(--color-brand-500),0.4)] btn-smooth text-lg">Posting <i data-lucide="rocket" class="w-5 h-5"></i></button>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Riwayat Feed -->
                     <div class="mt-4">
                         <h3 class="font-black text-2xl text-brand-900 mb-6 flex items-center gap-3"><i data-lucide="activity" class="w-8 h-8 text-brand-500"></i> Riwayat Publikasi</h3>
                         <div class="space-y-5">
@@ -821,29 +601,20 @@
                                 return `
                                 <div class="bg-white p-6 rounded-[2rem] border-4 border-brand-100 flex gap-5 hover:-translate-y-2 hover:shadow-[0_15px_40px_-10px_rgba(var(--color-brand-500),0.3)] transition-all duration-300 group relative overflow-hidden">
                                     <div class="absolute top-0 left-0 w-3 h-full ${cfg.bgClass}"></div>
-                                    <div class="w-16 h-16 ${cfg.bgClass} rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg mt-1 group-hover:scale-110 group-hover:rotate-6 transition-transform border-4 border-white">
-                                        <i class="${cfg.icon} text-3xl"></i>
-                                    </div>
+                                    <div class="w-16 h-16 ${cfg.bgClass} rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg mt-1 group-hover:scale-110 group-hover:rotate-6 transition-transform border-4 border-white"><i class="${cfg.icon} text-3xl"></i></div>
                                     <div class="flex-1 min-w-0 pl-2">
                                         <div class="flex flex-wrap justify-between items-start mb-3 gap-2">
-                                            <p class="font-extrabold text-slate-500 text-sm flex items-center gap-2 bg-slate-50 px-3 py-1.5 rounded-xl border-2 border-slate-100">
-                                                <span class="capitalize text-slate-800">${cfg.name}</span> <span class="w-1.5 h-1.5 bg-brand-300 rounded-full"></span> ${post.time}
-                                            </p>
+                                            <p class="font-extrabold text-slate-500 text-sm flex items-center gap-2 bg-slate-50 px-3 py-1.5 rounded-xl border-2 border-slate-100"><span class="capitalize text-slate-800">${cfg.name}</span> <span class="w-1.5 h-1.5 bg-brand-300 rounded-full"></span> ${post.time}</p>
                                             <span class="text-xs bg-brand-100 text-brand-700 px-3 py-1.5 rounded-full font-black uppercase border-2 border-brand-200">${post.status}</span>
                                         </div>
                                         <p class="text-slate-800 font-bold text-lg leading-relaxed whitespace-pre-wrap">${post.text}</p>
-                                        ${post.media ? `
-                                            <div class="mt-4 rounded-2xl overflow-hidden shadow-md max-w-md border-4 border-brand-100">
-                                                <img src="https://placehold.co/600x300/${document.documentElement.getAttribute('data-theme') === 'blue' ? 'eff6ff/3b82f6' : (document.documentElement.getAttribute('data-theme') === 'green' ? 'f0fdf4/22c55e' : 'FCE7F3/ec4899')}?text=📸+Gambar+Terlampir" class="w-full h-48 object-cover"/>
-                                            </div>
-                                        ` : ''}
+                                        ${post.media ? `<div class="mt-4 rounded-2xl overflow-hidden shadow-md max-w-md border-4 border-brand-100"><img src="https://placehold.co/600x300/${document.documentElement.getAttribute('data-theme') === 'blue' ? 'eff6ff/3b82f6' : (document.documentElement.getAttribute('data-theme') === 'green' ? 'f0fdf4/22c55e' : 'FCE7F3/ec4899')}?text=📸+Gambar+Terlampir" class="w-full h-48 object-cover"/></div>` : ''}
                                     </div>
                                 </div>`
                             }).join('') : `<div class="glass p-12 text-center rounded-[2.5rem]"><i data-lucide="ghost" class="w-16 h-16 text-brand-400 mx-auto mb-4 animate-bounce"></i><p class="font-black text-xl text-brand-600">Kosong melompong! Ayo buat postingan pertamamu.</p></div>`}
                         </div>
                     </div>
-                </div>
-            `;
+                </div>`;
         }
 
         function getScheduleHTML() {
@@ -855,14 +626,9 @@
                     ${sched.length > 0 ? sched.map(s => `
                         <div class="p-6 border-4 border-brand-200 rounded-[2rem] mb-5 bg-white flex items-center gap-5 shadow-sm">
                             <div class="bg-brand-100 p-4 rounded-2xl text-brand-600"><i data-lucide="clock" class="w-8 h-8"></i></div>
-                            <div>
-                                <p class="font-black text-xl text-slate-800 mb-1">${s.text}</p>
-                                <p class="text-base font-bold text-brand-600">Terjadwal untuk: <span class="capitalize">${s.platform}</span></p>
-                            </div>
-                        </div>
-                    `).join('') : '<div class="text-center p-12 bg-white border-4 border-brand-200 border-dashed rounded-[2.5rem]"><p class="font-black text-xl text-brand-500">Belum ada antrean jadwal.</p></div>'}
-                </div>
-            `;
+                            <div><p class="font-black text-xl text-slate-800 mb-1">${s.text}</p><p class="text-base font-bold text-brand-600">Terjadwal untuk: <span class="capitalize">${s.platform}</span></p></div>
+                        </div>`).join('') : '<div class="text-center p-12 bg-white border-4 border-brand-200 border-dashed rounded-[2.5rem]"><p class="font-black text-xl text-brand-500">Belum ada antrean jadwal.</p></div>'}
+                </div>`;
         }
 
         function getAnalyticsHTML() {
@@ -873,125 +639,74 @@
                     <div class="bg-white border-4 border-brand-200 rounded-[2.5rem] p-8 h-80 flex items-end justify-around gap-4 relative">
                         ${[40, 60, 30, 80, 50, 90, 100].map(h => `<div class="w-full bg-gradient-to-t from-brand-500 to-accent-400 rounded-t-2xl hover:opacity-80 transition-opacity" style="height: ${h}%"></div>`).join('')}
                     </div>
-                </div>
-            `;
+                </div>`;
         }
 
         function getIntegrationsHTML() {
             const accs = database[currentCompanyId].accounts;
-            
-            // HANYA ADMIN
             const magicLink = loginRole === 'admin' ? `
                 <div class="bg-gradient-to-r from-brand-600 to-brand-400 p-8 rounded-[2.5rem] mb-8 text-white shadow-lg flex flex-col md:flex-row items-center justify-between gap-6 border-4 border-white relative overflow-hidden">
                     <div class="absolute -right-10 -top-10 opacity-20"><i data-lucide="wand-2" class="w-48 h-48"></i></div>
                     <div class="flex items-center gap-5 relative z-10">
                         <div class="bg-white/20 p-3 md:p-4 rounded-2xl backdrop-blur-sm flex-shrink-0"><i data-lucide="wand-2" class="w-8 h-8"></i></div>
-                        <div>
-                            <h3 class="text-2xl font-black mb-1">Magic Link Klien ✨</h3>
-                            <p class="font-bold text-brand-50 text-sm md:text-base">Kirim link ini ke klien. Mereka bisa sambung akun sendiri tanpa perlu kasih password!</p>
-                        </div>
+                        <div><h3 class="text-2xl font-black mb-1">Magic Link Klien ✨</h3><p class="font-bold text-brand-50 text-sm md:text-base">Kirim link ini ke klien. Mereka bisa sambung akun sendiri tanpa perlu kasih password!</p></div>
                     </div>
-                    <button onclick="showToast('Link berhasil disalin! 📋', 'success')" class="bg-white text-brand-700 px-6 py-3.5 rounded-2xl font-black hover:scale-105 transition-transform shadow-md flex items-center gap-2 flex-shrink-0 w-full md:w-auto justify-center btn-smooth relative z-10">
-                        <i data-lucide="copy" class="w-5 h-5"></i> Salin Link
-                    </button>
-                </div>
-            ` : '';
+                    <button onclick="showToast('Link disalin! 📋', 'success')" class="bg-white text-brand-700 px-6 py-3.5 rounded-2xl font-black hover:scale-105 transition-transform btn-smooth relative z-10 w-full md:w-auto"><i data-lucide="copy" class="w-5 h-5 inline mr-2"></i> Salin Link</button>
+                </div>` : '';
 
             return `
                 <div class="animate-fade-in">
                     ${magicLink}
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                         ${Object.keys(platformConfig).map(plat => {
-                            const cfg = platformConfig[plat]; 
-                            const count = accs[plat] || 0;
-                            const isConn = count > 0;
+                            const cfg = platformConfig[plat], count = accs[plat] || 0, isConn = count > 0;
                             return `
                                 <div class="bg-white p-6 rounded-[2.5rem] border-4 ${isConn ? 'border-brand-400 shadow-[0_10px_20px_-10px_rgba(var(--color-brand-500),0.3)]' : 'border-brand-100'} flex flex-col items-center text-center relative overflow-hidden group hover:-translate-y-1 transition-all duration-300">
                                     ${isConn ? `<div class="absolute -right-4 -top-4 w-24 h-24 ${cfg.bgClass} opacity-20 rounded-full group-hover:scale-150 transition-transform duration-500"></div>` : ''}
-                                    
-                                    <div class="w-20 h-20 ${isConn ? cfg.bgClass : 'bg-slate-100 text-slate-400'} rounded-3xl flex items-center justify-center text-4xl shadow-lg mb-4 border-4 border-white transition-all relative z-10">
-                                        <i class="${cfg.icon}"></i>
-                                    </div>
+                                    <div class="w-20 h-20 ${isConn ? cfg.bgClass : 'bg-slate-100 text-slate-400'} rounded-3xl flex items-center justify-center text-4xl shadow-lg mb-4 border-4 border-white transition-all relative z-10"><i class="${cfg.icon}"></i></div>
                                     <h3 class="font-black text-xl text-brand-900 mb-1 relative z-10">${cfg.name}</h3>
-                                    
-                                    ${isConn ? `
-                                        <p class="text-sm font-black text-emerald-600 bg-emerald-50 px-4 py-1.5 rounded-full mb-4 border-2 border-emerald-100 relative z-10">${count} Akun Tersambung ✅</p>
-                                        <div class="w-full flex gap-2 relative z-10">
-                                            <button id="btn-connect-${plat}" onclick="simulateOAuth('${plat}')" class="flex-1 py-3.5 bg-brand-50 text-brand-700 font-black rounded-[1.2rem] hover:bg-brand-100 border-2 border-brand-200 transition-all text-sm btn-smooth">+ Tambah</button>
-                                            <button onclick="removeAccount('${plat}')" class="flex-1 py-3.5 bg-white text-rose-500 font-black rounded-[1.2rem] hover:bg-rose-500 hover:text-white border-2 border-rose-100 transition-all text-sm btn-smooth">Putus</button>
-                                        </div>
-                                    ` : `
-                                        <p class="text-sm font-bold text-slate-400 bg-slate-50 px-4 py-1.5 rounded-full mb-4 border-2 border-slate-100 relative z-10">Belum Terhubung</p>
-                                        <button id="btn-connect-${plat}" onclick="simulateOAuth('${plat}')" class="w-full py-3.5 bg-slate-800 text-white font-black rounded-[1.2rem] hover:bg-brand-500 hover:shadow-lg transition-all relative z-10 btn-smooth">Hubungkan</button>
-                                    `}
-                                </div>
-                            `;
+                                    ${isConn ? `<p class="text-sm font-black text-emerald-600 bg-emerald-50 px-4 py-1.5 rounded-full mb-4 border-2 border-emerald-100 relative z-10">${count} Tersambung ✅</p>
+                                        <div class="w-full flex gap-2 relative z-10"><button onclick="simulateOAuth('${plat}')" class="flex-1 py-3 bg-brand-50 text-brand-700 font-black rounded-xl hover:bg-brand-100 border-2 border-brand-200 btn-smooth">+ Tambah</button><button onclick="removeAccount('${plat}')" class="flex-1 py-3 bg-white text-rose-500 font-black rounded-xl hover:bg-rose-500 hover:text-white border-2 border-rose-100 btn-smooth">Putus</button></div>` 
+                                    : `<p class="text-sm font-bold text-slate-400 bg-slate-50 px-4 py-1.5 rounded-full mb-4 border-2 border-slate-100 relative z-10">Belum Terhubung</p>
+                                        <button onclick="simulateOAuth('${plat}')" class="w-full py-3.5 bg-slate-800 text-white font-black rounded-xl hover:bg-brand-500 relative z-10 btn-smooth">Hubungkan</button>`}
+                                </div>`;
                         }).join('')}
                     </div>
-                </div>
-            `;
+                </div>`;
         }
 
         function getBillingHTML() {
             return `
                 <div class="animate-fade-in flex flex-col items-center justify-center mt-4">
                     <div class="bg-gradient-to-br from-brand-600 to-accent-400 p-2 rounded-[3rem] shadow-[0_20px_50px_-15px_rgba(var(--color-brand-600),0.5)] max-w-lg w-full relative">
-                        <div class="absolute -top-6 left-1/2 -translate-x-1/2 bg-slate-900 text-white px-6 py-2 rounded-full font-black tracking-widest uppercase text-sm border-4 border-white shadow-md">
-                            Satu-Satunya Paket
-                        </div>
+                        <div class="absolute -top-6 left-1/2 -translate-x-1/2 bg-slate-900 text-white px-6 py-2 rounded-full font-black tracking-widest uppercase text-sm border-4 border-white shadow-md">Satu-Satunya Paket</div>
                         <div class="bg-white p-10 pt-12 rounded-[2.6rem] text-center h-full flex flex-col items-center relative overflow-hidden">
-                            <div class="w-24 h-24 bg-brand-50 text-brand-600 rounded-full flex items-center justify-center mb-6 shadow-inner border-4 border-brand-100 relative z-10">
-                                <i data-lucide="crown" class="w-12 h-12"></i>
-                                <div class="absolute top-0 right-0 w-6 h-6 bg-accent-400 rounded-full border-2 border-white animate-ping"></div>
-                            </div>
+                            <div class="w-24 h-24 bg-brand-50 text-brand-600 rounded-full flex items-center justify-center mb-6 shadow-inner border-4 border-brand-100 relative z-10"><i data-lucide="crown" class="w-12 h-12"></i><div class="absolute top-0 right-0 w-6 h-6 bg-accent-400 rounded-full border-2 border-white animate-ping"></div></div>
                             <h2 class="text-4xl font-black text-brand-900 mb-2 relative z-10">Paket Agensi PRO 🔥</h2>
                             <p class="text-brand-600 font-extrabold text-lg mb-8 relative z-10">Satu harga. Tanpa batas. Tanpa pusing.</p>
-                            
-                            <div class="bg-slate-50 w-full p-6 rounded-3xl border-4 border-slate-100 mb-8 relative z-10 hover:border-brand-300 transition-colors">
-                                <h3 class="text-5xl font-black text-slate-800 mb-1">Rp 150<span class="text-2xl text-slate-400">.000</span></h3>
-                                <p class="text-slate-500 font-black uppercase tracking-wider text-sm">Per Bulan</p>
-                            </div>
-
+                            <div class="bg-slate-50 w-full p-6 rounded-3xl border-4 border-slate-100 mb-8 relative z-10 hover:border-brand-300 transition-colors"><h3 class="text-5xl font-black text-slate-800 mb-1">Rp 150<span class="text-2xl text-slate-400">.000</span></h3><p class="text-slate-500 font-black uppercase tracking-wider text-sm">Per Bulan</p></div>
                             <ul class="text-left space-y-4 mb-10 w-full px-2 relative z-10">
                                 <li class="flex items-center gap-4 font-extrabold text-slate-700 text-lg"><i data-lucide="check-circle-2" class="w-7 h-7 text-brand-500 flex-shrink-0"></i> Unlimited Akun Medsos</li>
                                 <li class="flex items-center gap-4 font-extrabold text-slate-700 text-lg"><i data-lucide="check-circle-2" class="w-7 h-7 text-brand-500 flex-shrink-0"></i> Kelola Unlimited Klien</li>
-                                <li class="flex items-center gap-4 font-extrabold text-slate-700 text-lg"><i data-lucide="check-circle-2" class="w-7 h-7 text-brand-500 flex-shrink-0"></i> Auto-Posting & Penjadwalan</li>
                             </ul>
-
-                            <button onclick="showToast('Mengarahkan ke pembayaran... 💳', 'info')" class="w-full py-4 bg-slate-900 text-white font-black text-xl rounded-2xl hover:bg-brand-500 transition-all shadow-lg btn-smooth relative z-10">
-                                Mulai Langganan
-                            </button>
+                            <button onclick="showToast('Mengarahkan ke pembayaran... 💳', 'info')" class="w-full py-4 bg-slate-900 text-white font-black text-xl rounded-2xl hover:bg-brand-500 transition-all btn-smooth relative z-10">Mulai Langganan</button>
                         </div>
                     </div>
-                </div>
-            `;
+                </div>`;
         }
 
         function getSettingsHTML() {
             const currentTheme = document.documentElement.getAttribute('data-theme');
-            
-            // HANYA ADMIN
             const formTambahKlien = loginRole === 'admin' ? `
                 <div class="bg-white p-6 rounded-3xl border-4 border-brand-100 mb-6">
                     <h3 class="font-extrabold text-xl mb-2 text-slate-800">Tambah Ruang Klien Baru</h3>
-                    <div class="flex gap-3">
-                        <input type="text" id="new-client-name" class="flex-1 bg-brand-50 border-4 border-brand-100 rounded-2xl px-4 py-3 font-bold text-brand-900 outline-none focus:border-brand-500" placeholder="Nama Klien...">
-                        <button onclick="createNewClient()" class="bg-brand-900 text-white px-6 py-3 rounded-2xl font-bold hover:bg-brand-500 btn-smooth">Buat Ruang</button>
-                    </div>
-                </div>
-            ` : `
-                <div class="bg-brand-50 p-6 rounded-3xl border-2 border-dashed border-brand-200 mb-6 text-center">
-                    <i data-lucide="shield-check" class="w-8 h-8 mx-auto text-brand-400 mb-2"></i>
-                    <p class="font-bold text-brand-700">Hubungi Agensi Anda jika ingin menambahkan cabang bisnis baru.</p>
-                </div>
-            `;
+                    <div class="flex gap-3"><input type="text" id="new-client-name" class="flex-1 bg-brand-50 border-4 border-brand-100 rounded-2xl px-4 py-3 font-bold text-brand-900 outline-none focus:border-brand-500" placeholder="Nama Klien..."><button onclick="createNewClient()" class="bg-brand-900 text-white px-6 py-3 rounded-2xl font-bold hover:bg-brand-500 btn-smooth">Buat Ruang</button></div>
+                </div>` : `<div class="bg-brand-50 p-6 rounded-3xl border-2 border-dashed border-brand-200 mb-6 text-center"><i data-lucide="shield-check" class="w-8 h-8 mx-auto text-brand-400 mb-2"></i><p class="font-bold text-brand-700">Hubungi Agensi Anda jika ingin menambahkan cabang bisnis baru.</p></div>`;
 
             return `
                 <div class="animate-fade-in glass border-4 border-brand-200 shadow-sm p-8 rounded-[2rem] max-w-3xl">
                     <h2 class="text-3xl font-black text-brand-900 mb-8 flex items-center gap-3"><i data-lucide="palette" class="w-8 h-8"></i> Personalisasi & Akun</h2>
-                    
                     ${formTambahKlien}
-
                     <div class="bg-white p-6 rounded-3xl border-4 border-brand-100 mb-6">
                         <h3 class="font-extrabold text-xl mb-4 text-slate-800">Pilih Warna Dasbor</h3>
                         <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -1000,40 +715,21 @@
                             <button onclick="changeTheme('green')" class="p-4 rounded-2xl font-bold text-white bg-[#22c55e] hover:opacity-90 border-4 ${currentTheme==='green'?'border-slate-800 scale-105':'border-transparent'} transition-all">🍃 Hijau Fresh</button>
                         </div>
                     </div>
-
-                    <!-- Tombol Keluar / Logout -->
                     <div class="bg-white p-6 rounded-3xl border-4 border-rose-100 mt-6">
-                        <h3 class="font-extrabold text-xl mb-2 text-rose-600">Sesi Akun</h3>
-                        <p class="text-slate-500 font-bold mb-4">Keluar dari ruang kerja dan kembali ke Pintu Masuk.</p>
-                        <button onclick="handleLogout()" class="bg-rose-50 text-rose-600 border-2 border-rose-200 px-6 py-3 rounded-2xl font-bold hover:bg-rose-500 hover:text-white transition-all btn-smooth flex items-center justify-center gap-2">
-                            <i data-lucide="log-out" class="w-5 h-5"></i> Keluar (Logout)
-                        </button>
+                        <button onclick="handleLogout()" class="w-full bg-rose-50 text-rose-600 border-2 border-rose-200 px-6 py-3 rounded-2xl font-bold hover:bg-rose-500 hover:text-white transition-all btn-smooth flex justify-center items-center gap-2"><i data-lucide="log-out" class="w-5 h-5"></i> Keluar Akun (Logout)</button>
                     </div>
-                </div>
-            `;
+                </div>`;
         }
 
         function createNewClient() {
-            if(loginRole !== 'admin') return showToast('Akses ditolak!', 'error');
-            const input = document.getElementById('new-client-name');
-            const name = input.value.trim();
+            if(loginRole !== 'admin') return;
+            const input = document.getElementById('new-client-name'), name = input.value.trim();
             if(!name) return showToast('Tulis nama kliennya dong!', 'warning');
-            
             const newId = 'klien' + Date.now();
-            database[newId] = {
-                name: `🏢 ${name}`,
-                accounts: { facebook: 0, twitter: 0, instagram: 0, linkedin: 0, youtube: 0, tiktok: 0, whatsapp: 0, telegram: 0, pinterest: 0, threads: 0 },
-                feed: [], scheduled: []
-            };
-
-            saveToFirestore();
-            updateCompanyDropdowns();
-            input.value = '';
-            showToast(`Ruang Kerja "${name}" dibuat!`, 'success');
-            changeCompany(newId);
+            database[newId] = { name: `🏢 ${name}`, accounts: {}, feed: [], scheduled: [] };
+            saveToFirestore(); updateCompanyDropdowns(); input.value = '';
+            showToast(`Ruang Kerja "${name}" dibuat!`, 'success'); changeCompany(newId);
         }
-
-        window.onload = () => {};
     </script>
 </body>
 </html>
