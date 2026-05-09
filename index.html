@@ -115,18 +115,18 @@
             transition: border-color 0.5s ease, box-shadow 0.5s ease;
         }
 
-        /* Warna Orisinal FontAwesome */
-        .color-fb { color: #1877F2; } .bg-fb { background-color: #1877F2; color: white;}
-        .color-tw { color: #000000; } .bg-tw { background-color: #000000; color: white;}
-        .color-ig { background: -webkit-linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .bg-ig { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: white;}
-        .color-li { color: #0A66C2; } .bg-li { background-color: #0A66C2; color: white;}
-        .color-yt { color: #FF0000; } .bg-yt { background-color: #FF0000; color: white;}
-        .color-tk { color: #000000; } .bg-tk { background-color: #000000; color: white;}
-        .color-wa { color: #25D366; } .bg-wa { background-color: #25D366; color: white;}
-        .color-tg { color: #26A5E4; } .bg-tg { background-color: #26A5E4; color: white;}
-        .color-pt { color: #E60023; } .bg-pt { background-color: #E60023; color: white;}
-        .color-th { color: #000000; } .bg-th { background-color: #000000; color: white;}
+        /* Warna Orisinal FontAwesome (Akurat Sesuai Brand) */
+        .color-fb { color: #1877F2; } .bg-fb { background-color: #1877F2; color: #ffffff;}
+        .color-tw { color: #000000; } .bg-tw { background-color: #000000; color: #ffffff;}
+        .color-ig { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .bg-ig { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%); color: #ffffff;}
+        .color-li { color: #0A66C2; } .bg-li { background-color: #0A66C2; color: #ffffff;}
+        .color-yt { color: #FF0000; } .bg-yt { background-color: #FF0000; color: #ffffff;}
+        .color-tk { color: #000000; } .bg-tk { background-color: #000000; color: #ffffff;}
+        .color-wa { color: #25D366; } .bg-wa { background-color: #25D366; color: #ffffff;}
+        .color-tg { color: #24A1DE; } .bg-tg { background-color: #24A1DE; color: #ffffff;}
+        .color-pt { color: #E60023; } .bg-pt { background-color: #E60023; color: #ffffff;}
+        .color-th { color: #000000; } .bg-th { background-color: #000000; color: #ffffff;}
 
         .btn-smooth:active { transform: scale(0.95); transition: transform 0.1s; }
 
@@ -149,6 +149,106 @@
 
     <div id="toast-container"></div>
 
+    <!-- Halaman Login (Pintu Masuk) -->
+    <div id="login-screen" class="fixed inset-0 z-[100] flex items-center justify-center bg-gradient-to-br from-brand-50 to-brand-200 transition-opacity duration-500">
+        <!-- Dekorasi Background -->
+        <div class="absolute inset-0 bg-[radial-gradient(rgba(var(--color-brand-500),0.1)_2px,transparent_2px)] [background-size:32px_32px]"></div>
+        
+        <div class="glass w-full max-w-md p-8 md:p-10 rounded-[2.5rem] relative z-10 shadow-2xl border-4 border-white animate-slide-up mx-4">
+            <div class="text-center mb-8">
+                <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-tr from-brand-500 to-accent-400 rounded-2xl text-white shadow-lg mb-4 rotate-3">
+                    <i data-lucide="sparkles" class="w-8 h-8"></i>
+                </div>
+                <h2 id="auth-title" class="text-3xl font-black text-brand-900 tracking-tight mb-2">Selamat Datang</h2>
+                <p id="auth-subtitle" class="text-brand-600 font-bold">Pintu masuk ke SosialHub</p>
+            </div>
+
+            <!-- CONTAINER LOGIN -->
+            <div id="view-login" class="animate-fade-in">
+                <!-- Role Selector -->
+                <div class="flex bg-brand-100 p-1 rounded-2xl mb-6 relative">
+                    <div id="login-slider" class="absolute w-1/2 h-[calc(100%-8px)] bg-white rounded-xl shadow-sm top-1 left-0 border-4 border-transparent bg-clip-padding transition-transform duration-300 transform translate-x-0"></div>
+                    <button onclick="switchLoginRole('admin')" type="button" class="flex-1 py-3 text-sm font-black z-10 text-brand-900 transition-colors" id="btn-role-admin">Admin Agensi</button>
+                    <button onclick="switchLoginRole('client')" type="button" class="flex-1 py-3 text-sm font-black z-10 text-brand-500 transition-colors" id="btn-role-client">Klien Pengguna</button>
+                </div>
+
+                <form onsubmit="handleLogin(event)" class="space-y-4">
+                    <div>
+                        <div class="relative">
+                            <i data-lucide="mail" class="absolute left-4 top-3.5 w-5 h-5 text-brand-400"></i>
+                            <input type="email" id="login-email" required class="w-full bg-white/80 border-4 border-brand-100 rounded-2xl py-3 pl-12 pr-4 focus:border-brand-500 focus:bg-white outline-none font-bold text-brand-900 placeholder-brand-400" placeholder="Email Anda">
+                        </div>
+                    </div>
+                    <div>
+                        <div class="relative">
+                            <i data-lucide="lock" class="absolute left-4 top-3.5 w-5 h-5 text-brand-400"></i>
+                            <input type="password" id="login-password" required class="w-full bg-white/80 border-4 border-brand-100 rounded-2xl py-3 pl-12 pr-4 focus:border-brand-500 focus:bg-white outline-none font-bold text-brand-900 placeholder-brand-400" placeholder="Kata Sandi">
+                        </div>
+                    </div>
+                    <div class="pt-2">
+                        <button id="submit-login" type="submit" class="w-full bg-gradient-to-r from-brand-500 to-accent-400 text-white font-black text-lg py-4 rounded-2xl shadow-[0_10px_25px_rgba(var(--color-brand-500),0.4)] hover:from-brand-600 transition-all btn-smooth flex justify-center items-center gap-2">
+                            Masuk Dasbor <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+                </form>
+                
+                <div class="relative flex py-5 items-center">
+                    <div class="flex-grow border-t-2 border-brand-100"></div>
+                    <span class="flex-shrink-0 mx-4 text-brand-400 text-sm font-extrabold">ATAU</span>
+                    <div class="flex-grow border-t-2 border-brand-100"></div>
+                </div>
+                
+                <button type="button" onclick="handleGoogleAuth()" class="w-full bg-white text-slate-700 font-extrabold text-lg py-3.5 rounded-2xl shadow-sm border-4 border-slate-100 hover:bg-slate-50 hover:border-slate-200 transition-all btn-smooth flex justify-center items-center gap-3">
+                    <i class="fa-brands fa-google text-rose-500 text-xl"></i> Masuk dengan Google
+                </button>
+
+                <p class="text-center mt-6 text-sm font-extrabold text-brand-600">Belum punya akun? <button type="button" onclick="toggleAuthView('register')" class="text-brand-900 font-black hover:underline focus:outline-none">Daftar sekarang</button></p>
+            </div>
+
+            <!-- CONTAINER REGISTER -->
+            <div id="view-register" class="hidden animate-fade-in">
+                <form onsubmit="handleRegister(event)" class="space-y-4">
+                    <div>
+                        <div class="relative">
+                            <i data-lucide="user" class="absolute left-4 top-3.5 w-5 h-5 text-brand-400"></i>
+                            <input type="text" id="register-name" required class="w-full bg-white/80 border-4 border-brand-100 rounded-2xl py-3 pl-12 pr-4 focus:border-brand-500 focus:bg-white outline-none font-bold text-brand-900 placeholder-brand-400" placeholder="Nama Bisnis">
+                        </div>
+                    </div>
+                    <div>
+                        <div class="relative">
+                            <i data-lucide="mail" class="absolute left-4 top-3.5 w-5 h-5 text-brand-400"></i>
+                            <input type="email" id="register-email" required class="w-full bg-white/80 border-4 border-brand-100 rounded-2xl py-3 pl-12 pr-4 focus:border-brand-500 focus:bg-white outline-none font-bold text-brand-900 placeholder-brand-400" placeholder="Email Baru">
+                        </div>
+                    </div>
+                    <div>
+                        <div class="relative">
+                            <i data-lucide="lock" class="absolute left-4 top-3.5 w-5 h-5 text-brand-400"></i>
+                            <input type="password" id="register-password" required class="w-full bg-white/80 border-4 border-brand-100 rounded-2xl py-3 pl-12 pr-4 focus:border-brand-500 focus:bg-white outline-none font-bold text-brand-900 placeholder-brand-400" placeholder="Sandi Min. 6 Karakter">
+                        </div>
+                    </div>
+                    <div class="pt-2">
+                        <button id="submit-register" type="submit" class="w-full bg-slate-900 text-white font-black text-lg py-4 rounded-2xl shadow-[0_10px_25px_rgba(0,0,0,0.2)] hover:bg-brand-500 transition-all btn-smooth flex justify-center items-center gap-2">
+                            Buat Akun Gratis <i data-lucide="user-plus" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+                </form>
+
+                <div class="relative flex py-5 items-center">
+                    <div class="flex-grow border-t-2 border-brand-100"></div>
+                    <span class="flex-shrink-0 mx-4 text-brand-400 text-sm font-extrabold">ATAU</span>
+                    <div class="flex-grow border-t-2 border-brand-100"></div>
+                </div>
+
+                <button type="button" onclick="handleGoogleAuth()" class="w-full bg-white text-slate-700 font-extrabold text-lg py-3.5 rounded-2xl shadow-sm border-4 border-slate-100 hover:bg-slate-50 hover:border-slate-200 transition-all btn-smooth flex justify-center items-center gap-3">
+                    <i class="fa-brands fa-google text-rose-500 text-xl"></i> Daftar dengan Google
+                </button>
+
+                <p class="text-center mt-6 text-sm font-extrabold text-brand-600">Sudah punya akun? <button type="button" onclick="toggleAuthView('login')" class="text-brand-900 font-black hover:underline focus:outline-none">Masuk di sini</button></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sidebar Desktop -->
     <aside class="w-72 glass hidden md:flex flex-col h-full z-20 border-r-4 border-brand-200 flex-shrink-0 relative">
         <div class="p-8 pb-6 flex items-center gap-4">
             <div class="bg-gradient-to-tr from-brand-500 to-accent-400 p-3 rounded-[1.2rem] text-white shadow-lg shadow-brand-500/40 rotate-3 transition-colors duration-500">
@@ -171,11 +271,12 @@
                 </div>
             </div>
             <div class="flex-1 px-4">
-                <select id="mobile-company-selector" onchange="changeCompany(this.value)" class="w-full bg-white border-4 border-brand-200 text-brand-700 font-black text-sm rounded-2xl py-2 px-3 outline-none appearance-none text-center shadow-sm">
-                    <option value="klien1">🏢 Perusahaan Pribadi</option>
-                    <option value="klien2">🍔 Klien Resto A</option>
-                    <option value="klien3">👟 Klien Toko Sepatu</option>
-                </select>
+                <div class="relative">
+                    <div id="mobile-client-lock-icon" class="hidden absolute left-3 top-2.5 z-10 text-slate-400"><i data-lucide="lock" class="w-4 h-4"></i></div>
+                    <select id="mobile-company-selector" onchange="changeCompany(this.value)" class="w-full bg-white border-4 border-brand-200 text-brand-700 font-black text-sm rounded-2xl py-2 px-3 outline-none appearance-none text-center shadow-sm">
+                        <!-- Options generated dynamically -->
+                    </select>
+                </div>
             </div>
         </div>
 
@@ -188,12 +289,13 @@
                 
                 <div class="flex items-center border-l-4 border-brand-200 pl-8">
                     <div class="relative group">
+                        <!-- Indikator Gembok untuk Klien -->
+                        <div id="client-lock-icon" class="hidden absolute left-4 top-3.5 z-10 text-slate-400"><i data-lucide="lock" class="w-4 h-4"></i></div>
+                        
                         <select id="company-selector" onchange="changeCompany(this.value)" class="appearance-none bg-white hover:bg-brand-50 border-4 border-brand-200 text-brand-800 font-black text-sm rounded-[1.5rem] focus:ring-4 focus:ring-brand-500/20 focus:border-brand-500 block py-3 pl-5 pr-12 outline-none cursor-pointer transition-all shadow-[0_4px_10px_rgba(var(--color-brand-500),0.1)] hover:shadow-brand-500/20">
-                            <option value="klien1">🏢 Perusahaan Pribadi</option>
-                            <option value="klien2">🍔 Klien Resto A</option>
-                            <option value="klien3">👟 Klien Toko Sepatu</option>
+                             <!-- Options generated dynamically -->
                         </select>
-                        <i data-lucide="chevron-down" class="w-5 h-5 absolute right-4 top-3.5 text-brand-400 group-hover:text-brand-600 transition-colors pointer-events-none"></i>
+                        <i data-lucide="chevron-down" id="company-chevron" class="w-5 h-5 absolute right-4 top-3.5 text-brand-400 group-hover:text-brand-600 transition-colors pointer-events-none"></i>
                     </div>
                 </div>
             </div>
@@ -214,50 +316,220 @@
 
     <nav class="md:hidden glass border-t-4 border-brand-200 fixed bottom-0 w-full z-50 px-2 py-3 flex justify-between items-center shadow-[0_-10px_30px_rgba(var(--color-brand-500),0.2)] pb-safe" id="mobile-nav"></nav>
 
+    <!-- Facebook SDK Asli -->
     <script>
-        // Set tema tersimpan saat load
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId      : 'MASUKKAN_APP_ID_FACEBOOK_ANDA_DISINI',
+                cookie     : true,
+                xfbml      : true,
+                version    : 'v19.0'
+            });
+            console.log("📘 Facebook SDK Berhasil Dimuat!");
+        };
+
+        (function(d, s, id){
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement(s); js.id = id;
+            js.src = "https://connect.facebook.net/id_ID/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+    <!-- Inisialisasi Firebase Database -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-analytics.js";
+        import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, updateProfile, onAuthStateChanged, signOut, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, doc, setDoc, getDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // Konfigurasi Firebase Anda
+        const firebaseConfig = {
+            apiKey: "AIzaSyCGs467Wb2uZfdFReMi2gjoa-77HXiEpdQ",
+            authDomain: "market-place-kalimaja.firebaseapp.com",
+            projectId: "market-place-kalimaja",
+            storageBucket: "market-place-kalimaja.firebasestorage.app",
+            messagingSenderId: "58576818321",
+            appId: "1:58576818321:web:b4eb5d25413a8b14776f30",
+            measurementId: "G-JJ2C1PNKL1"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        
+        window.firebaseAuth = { auth: getAuth(app), signInWithEmailAndPassword, createUserWithEmailAndPassword, updateProfile, signOut, GoogleAuthProvider, signInWithPopup };
+        window.firebaseDb = { db: getFirestore(app), doc, setDoc, getDoc };
+        
+        console.log("🔥 Firebase Auth & Firestore Berhasil Terhubung!");
+    </script>
+
+    <!-- LOGIKA UTAMA APLIKASI -->
+    <script>
         const savedTheme = localStorage.getItem('sosialhub-theme') || 'pink';
         document.documentElement.setAttribute('data-theme', savedTheme);
 
-        let activeTab = 'dashboard';
+        let activeTab = localStorage.getItem('sosialhub-activeTab') || 'dashboard';
+        let currentCompanyId = localStorage.getItem('sosialhub-companyId') || 'klien1';
+        let loginRole = localStorage.getItem('sosialhub-role') || 'admin';
+        let isLoggedIn = localStorage.getItem('sosialhub-loggedIn') === 'true';
         let attachedMedia = false; 
+
+        if (isLoggedIn) {
+            document.getElementById('login-screen').style.display = 'none';
+        }
         
-        // Database Simulasi Multi-Klien 
-        const database = {
+        // Data Dummy Awal
+        let database = {
             klien1: {
-                accounts: { facebook: 1, twitter: 0, instagram: 1, linkedin: 1, youtube: 0, tiktok: 1, whatsapp: 0, telegram: 0, pinterest: 0, threads: 0 },
-                feed: [
-                    { id: 1, platform: 'facebook', text: 'Koleksi terbaru kami sudah rilis! Yuk cek link di bio sebelum kehabisan ✨', media: true, time: '2 jam yang lalu', status: 'Mengudara' },
-                    { id: 4, platform: 'linkedin', text: 'Bangga mengumumkan bahwa bulan ini kami memecahkan rekor penjualan baru! Terima kasih tim 🚀', media: false, time: '4 jam yang lalu', status: 'Mengudara' }
-                ],
+                name: '🏢 Perusahaan Pribadi', accounts: { facebook: 1, twitter: 0, instagram: 1, linkedin: 1, youtube: 0, tiktok: 1, whatsapp: 0, telegram: 0, pinterest: 0, threads: 0 },
+                feed: [{ id: 1, platform: 'facebook', text: 'Koleksi terbaru kami sudah rilis! Yuk cek link di bio sebelum kehabisan ✨', media: true, time: '2 jam yang lalu', status: 'Mengudara' }],
                 scheduled: []
             },
             klien2: {
-                accounts: { facebook: 3, twitter: 1, instagram: 2, linkedin: 0, youtube: 1, tiktok: 1, whatsapp: 1, telegram: 1, pinterest: 0, threads: 1 },
-                feed: [
-                    { id: 2, platform: 'twitter', text: 'Laper jam segini? Promo diskon 50% untuk menu ayam geprek khusus malam ini! 🍗🔥', media: false, time: '1 jam yang lalu', status: 'Mengudara' }
-                ],
+                name: '🍔 Klien Restoran', accounts: { facebook: 3, twitter: 1, instagram: 2, linkedin: 0, youtube: 1, tiktok: 1, whatsapp: 1, telegram: 1, pinterest: 0, threads: 1 },
+                feed: [{ id: 2, platform: 'twitter', text: 'Laper jam segini? Promo diskon 50% untuk menu ayam geprek khusus malam ini! 🍗🔥', media: false, time: '1 jam yang lalu', status: 'Mengudara' }],
                 scheduled: []
-            },
-            klien3: {
-                accounts: { facebook: 0, twitter: 0, instagram: 0, linkedin: 0, youtube: 0, tiktok: 0, whatsapp: 0, telegram: 0, pinterest: 0, threads: 0 },
-                feed: [], scheduled: []
             }
         };
 
-        let currentCompanyId = 'klien1';
+        async function saveToFirestore() {
+            if (!isLoggedIn || !window.firebaseAuth.auth.currentUser) return;
+            try {
+                const uid = window.firebaseAuth.auth.currentUser.uid;
+                const { db, doc, setDoc } = window.firebaseDb;
+                await setDoc(doc(db, "agensi_data", uid), { data_klien: database });
+                console.log("💾 Berhasil menyimpan ke Firestore");
+            } catch (error) { console.error("Gagal simpan ke Firestore:", error); }
+        }
 
-        // Konfigurasi Platform dengan Ikon Asli FontAwesome
+        function toggleAuthView(view) {
+            const loginView = document.getElementById('view-login'), registerView = document.getElementById('view-register');
+            const title = document.getElementById('auth-title'), subtitle = document.getElementById('auth-subtitle');
+            if (view === 'register') { loginView.classList.add('hidden'); registerView.classList.remove('hidden'); title.innerText = 'Buat Akun'; subtitle.innerText = 'Mulai perjalanan Agensi Anda'; } 
+            else { registerView.classList.add('hidden'); loginView.classList.remove('hidden'); title.innerText = 'Selamat Datang'; subtitle.innerText = 'Pintu masuk ke SosialHub'; }
+        }
+
+        function switchLoginRole(role) {
+            loginRole = role;
+            const slider = document.getElementById('login-slider');
+            const btnAdmin = document.getElementById('btn-role-admin'), btnClient = document.getElementById('btn-role-client');
+            if (role === 'admin') { slider.style.transform = 'translateX(0)'; btnAdmin.classList.replace('text-brand-500', 'text-brand-900'); btnClient.classList.replace('text-brand-900', 'text-brand-500'); } 
+            else { slider.style.transform = 'translateX(100%)'; btnAdmin.classList.replace('text-brand-900', 'text-brand-500'); btnClient.classList.replace('text-brand-500', 'text-brand-900'); }
+        }
+
+        async function processLoginSuccess(user, userName) {
+            const { db, doc, getDoc, setDoc } = window.firebaseDb;
+            const docRef = doc(db, "agensi_data", user.uid);
+            const docSnap = await getDoc(docRef);
+
+            if (docSnap.exists()) database = docSnap.data().data_klien;
+            else { saveToFirestore(); } // Simpan default jika user baru
+
+            updateCompanyDropdowns();
+            const loginScreen = document.getElementById('login-screen');
+            loginScreen.classList.add('opacity-0'); 
+            
+            setTimeout(() => {
+                loginScreen.style.display = 'none'; 
+                isLoggedIn = true;
+                localStorage.setItem('sosialhub-loggedIn', 'true');
+                localStorage.setItem('sosialhub-role', loginRole);
+                showToast(`Selamat datang, ${userName}! 🎉`, 'success');
+                
+                // === LOGIKA ROLE-BASED ACCESS CONTROL (RBAC) ===
+                const selDesktop = document.getElementById('company-selector');
+                const selMobile = document.getElementById('mobile-company-selector');
+                const lockIcon = document.getElementById('client-lock-icon');
+                const mobLockIcon = document.getElementById('mobile-client-lock-icon');
+                const chevronIcon = document.getElementById('company-chevron');
+
+                if(loginRole === 'client') {
+                    // Klien: Kunci akses ke 1 klien, disable dropdown, ubah style jadi terkunci
+                    changeCompany(Object.keys(database)[0]);
+                    selDesktop.disabled = true; selMobile.disabled = true;
+                    
+                    selDesktop.classList.add('bg-slate-50', 'text-slate-500', 'border-slate-200', 'pl-10');
+                    selDesktop.classList.remove('hover:bg-brand-50', 'cursor-pointer');
+                    selMobile.classList.add('bg-slate-50', 'text-slate-500', 'pl-8');
+                    
+                    lockIcon.classList.remove('hidden'); mobLockIcon.classList.remove('hidden');
+                    chevronIcon.classList.add('hidden');
+                    
+                    // Keamanan ekstra: lempar ke dasbor jika buka billing
+                    if(activeTab === 'billing') activeTab = 'dashboard';
+                } else {
+                    // Admin: Buka akses
+                    localStorage.setItem('sosialhub-companyId', currentCompanyId);
+                    selDesktop.disabled = false; selMobile.disabled = false;
+                    
+                    selDesktop.classList.remove('bg-slate-50', 'text-slate-500', 'border-slate-200', 'pl-10');
+                    selDesktop.classList.add('hover:bg-brand-50', 'cursor-pointer');
+                    selMobile.classList.remove('bg-slate-50', 'text-slate-500', 'pl-8');
+                    
+                    lockIcon.classList.add('hidden'); mobLockIcon.classList.add('hidden');
+                    chevronIcon.classList.remove('hidden');
+                }
+                
+                init(); 
+            }, 500);
+        }
+
+        async function handleLogin(e) {
+            e.preventDefault();
+            const btn = document.getElementById('submit-login'); btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i>...'; btn.classList.add('pointer-events-none');
+            try {
+                const cred = await window.firebaseAuth.signInWithEmailAndPassword(window.firebaseAuth.auth, document.getElementById('login-email').value, document.getElementById('login-password').value);
+                await processLoginSuccess(cred.user, cred.user.displayName || (loginRole === 'admin' ? 'Admin Agensi' : 'Klien'));
+            } catch (err) {
+                showToast("Gagal masuk! Cek email & sandi Anda.", 'error');
+                btn.innerHTML = 'Masuk Dasbor <i data-lucide="arrow-right" class="w-5 h-5"></i>'; btn.classList.remove('pointer-events-none');
+            }
+        }
+
+        async function handleRegister(e) {
+            e.preventDefault();
+            const btn = document.getElementById('submit-register'); btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i>...'; btn.classList.add('pointer-events-none');
+            try {
+                const cred = await window.firebaseAuth.createUserWithEmailAndPassword(window.firebaseAuth.auth, document.getElementById('register-email').value, document.getElementById('register-password').value);
+                await window.firebaseAuth.updateProfile(cred.user, { displayName: document.getElementById('register-name').value });
+                await window.firebaseDb.setDoc(window.firebaseDb.doc(window.firebaseDb.db, "agensi_data", cred.user.uid), { data_klien: database });
+                showToast('Akun berhasil dibuat! Silakan masuk.', 'success');
+                document.getElementById('login-email').value = document.getElementById('register-email').value;
+                toggleAuthView('login');
+            } catch (err) {
+                showToast("Gagal mendaftar! Mungkin email sudah terpakai.", 'error');
+                btn.innerHTML = 'Buat Akun Gratis <i data-lucide="user-plus" class="w-5 h-5"></i>'; btn.classList.remove('pointer-events-none');
+            }
+        }
+
+        async function handleGoogleAuth() {
+            try {
+                const provider = new window.firebaseAuth.GoogleAuthProvider();
+                showToast("Membuka Google...", "info");
+                const result = await window.firebaseAuth.signInWithPopup(window.firebaseAuth.auth, provider);
+                await processLoginSuccess(result.user, result.user.displayName);
+            } catch (error) { showToast("Gagal login dengan Google.", 'error'); }
+        }
+
+        async function handleLogout() {
+            try {
+                if(window.firebaseAuth) await window.firebaseAuth.signOut(window.firebaseAuth.auth);
+                localStorage.removeItem('sosialhub-loggedIn'); localStorage.removeItem('sosialhub-role'); localStorage.removeItem('sosialhub-activeTab');
+                window.location.reload();
+            } catch (e) { showToast('Gagal keluar.', 'error'); }
+        }
+
         const platformConfig = {
-            facebook: { name: 'Facebook', icon: 'fa-brands fa-facebook', colorClass: 'color-fb', bgClass: 'bg-fb' },
+            facebook: { name: 'Facebook', icon: 'fa-brands fa-facebook-f', colorClass: 'color-fb', bgClass: 'bg-fb' },
             twitter:  { name: 'X (Twitter)', icon: 'fa-brands fa-x-twitter', colorClass: 'color-tw', bgClass: 'bg-tw' },
             instagram:{ name: 'Instagram', icon: 'fa-brands fa-instagram', colorClass: 'color-ig', bgClass: 'bg-ig' },
             linkedin: { name: 'LinkedIn', icon: 'fa-brands fa-linkedin-in', colorClass: 'color-li', bgClass: 'bg-li' },
             youtube:  { name: 'YouTube', icon: 'fa-brands fa-youtube', colorClass: 'color-yt', bgClass: 'bg-yt' },
             tiktok:   { name: 'TikTok', icon: 'fa-brands fa-tiktok', colorClass: 'color-tk', bgClass: 'bg-tk' },
             whatsapp: { name: 'WhatsApp', icon: 'fa-brands fa-whatsapp', colorClass: 'color-wa', bgClass: 'bg-wa' },
-            telegram: { name: 'Telegram', icon: 'fa-brands fa-telegram', colorClass: 'color-tg', bgClass: 'bg-tg' },
-            pinterest:{ name: 'Pinterest', icon: 'fa-brands fa-pinterest', colorClass: 'color-pt', bgClass: 'bg-pt' },
+            telegram: { name: 'Telegram', icon: 'fa-brands fa-telegram-plane', colorClass: 'color-tg', bgClass: 'bg-tg' },
+            pinterest:{ name: 'Pinterest', icon: 'fa-brands fa-pinterest-p', colorClass: 'color-pt', bgClass: 'bg-pt' },
             threads:  { name: 'Threads', icon: 'fa-brands fa-threads', colorClass: 'color-th', bgClass: 'bg-th' }
         };
 
@@ -270,10 +542,22 @@
             { id: 'settings', label: 'Pengaturan', icon: 'settings-2', section: 'footer' }
         ];
 
+        function updateCompanyDropdowns() {
+            const selectorDesktop = document.getElementById('company-selector');
+            const selectorMobile = document.getElementById('mobile-company-selector');
+            selectorDesktop.innerHTML = ''; selectorMobile.innerHTML = '';
+
+            for (const key in database) {
+                const name = database[key].name || `🏢 ${key.toUpperCase()}`;
+                selectorDesktop.add(new Option(name, key)); selectorMobile.add(new Option(name, key));
+            }
+            if(!database[currentCompanyId]) currentCompanyId = Object.keys(database)[0];
+            selectorDesktop.value = currentCompanyId; selectorMobile.value = currentCompanyId;
+        }
+
         function init() {
-            renderSidebar();
-            renderMobileNav();
-            renderApp();
+            if(!isLoggedIn) return; 
+            updateCompanyDropdowns(); renderSidebar(); renderMobileNav(); renderApp();
         }
 
         function changeTheme(themeName) {
@@ -285,6 +569,7 @@
 
         function changeCompany(companyId) {
             currentCompanyId = companyId;
+            localStorage.setItem('sosialhub-companyId', companyId); 
             document.getElementById('company-selector').value = companyId;
             document.getElementById('mobile-company-selector').value = companyId;
             attachedMedia = false; 
@@ -294,16 +579,14 @@
 
         function changeTab(tabId) {
             activeTab = tabId;
-            renderSidebar();
-            renderMobileNav();
-            renderApp();
+            localStorage.setItem('sosialhub-activeTab', tabId);
+            renderSidebar(); renderMobileNav(); renderApp();
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         function showToast(message, type = 'success') {
             const container = document.getElementById('toast-container');
             const toast = document.createElement('div');
-            
             let bgClass = 'bg-brand-900'; let icon = '🔔';
             if(type === 'success') { bgClass = 'bg-emerald-500'; icon = '✅'; }
             if(type === 'error') { bgClass = 'bg-rose-500'; icon = '❌'; }
@@ -316,16 +599,8 @@
             setTimeout(() => { toast.remove(); }, 4000);
         }
 
-        function simulateMediaUpload() {
-            attachedMedia = true;
-            showToast('Foto/Video berhasil dilampirkan! 📸', 'success');
-            renderApp();
-        }
-
-        function removeMedia() {
-            attachedMedia = false;
-            renderApp();
-        }
+        function simulateMediaUpload() { attachedMedia = true; showToast('Foto dilampirkan! 📸', 'success'); renderApp(); }
+        function removeMedia() { attachedMedia = false; renderApp(); }
 
         function handlePost(isSchedule = false) {
             const text = document.getElementById('post-textarea').value;
@@ -337,16 +612,17 @@
             if (activePlatforms.length === 0) return showToast('Belum ada akun tersambung. Ke menu Integrasi dulu yuk!', 'error');
 
             if (isSchedule) {
-                showToast('Postingan masuk ke antrean jadwal! 🗓️', 'success');
-                currentData.scheduled.unshift({ id: Date.now(), platform: activePlatforms[0], text: text || 'Postingan Media', time: 'Dijadwalkan untuk besok' });
+                showToast('Masuk ke antrean jadwal! 🗓️', 'success');
+                currentData.scheduled.unshift({ id: Date.now(), platform: activePlatforms[0], text: text || 'Postingan Media', time: 'Besok' });
             } else {
-                showToast('Menerbangkan postingan ke internet... 🚀', 'info');
+                showToast('Menerbangkan postingan... 🚀', 'info');
                 setTimeout(() => {
                     activePlatforms.forEach(plat => {
                         currentData.feed.unshift({ id: Date.now() + Math.random(), platform: plat, text: text, media: attachedMedia, time: 'Baru saja', status: 'Mengudara' });
                     });
                     attachedMedia = false; 
-                    showToast(`Berhasil diposting ke ${activePlatforms.length} platform! 🎉`, 'success');
+                    saveToFirestore(); 
+                    showToast(`Sukses diposting ke ${activePlatforms.length} platform! 🎉`, 'success');
                     renderApp();
                 }, 800);
             }
@@ -355,33 +631,39 @@
 
         function simulateOAuth(platform) {
             const btn = document.getElementById(`btn-connect-${platform}`);
-            if(btn) {
-                btn.innerHTML = `<i class="fa-solid fa-circle-notch fa-spin"></i> Menghubungkan...`;
-                btn.classList.add('opacity-80', 'pointer-events-none');
+            if(btn) { btn.innerHTML = `<i class="fa-solid fa-circle-notch fa-spin"></i>`; btn.classList.add('pointer-events-none'); }
+
+            if (platform === 'facebook' && typeof FB !== 'undefined') {
+                FB.login(function(response) {
+                    if (response.authResponse) {
+                        database[currentCompanyId].accounts[platform] = (database[currentCompanyId].accounts[platform] || 0) + 1;
+                        saveToFirestore(); showToast(`Akun FB terhubung resmi. 🔗`, 'success'); renderApp();
+                    } else { showToast('Otorisasi dibatalkan.', 'warning'); renderApp(); }
+                }, {scope: 'public_profile,pages_manage_posts'}); 
+            } else {
+                setTimeout(() => {
+                    database[currentCompanyId].accounts[platform] = (database[currentCompanyId].accounts[platform] || 0) + 1;
+                    saveToFirestore(); showToast(`Akun ${platformConfig[platform].name} terhubung. 🔗`, 'success'); renderApp();
+                }, 1000);
             }
-            setTimeout(() => {
-                database[currentCompanyId].accounts[platform] = (database[currentCompanyId].accounts[platform] || 0) + 1;
-                showToast(`Sukses! Akun ${platformConfig[platform].name} berhasil ditambahkan. 🔗`, 'success');
-                renderApp();
-            }, 1000);
         }
 
         function removeAccount(platform) {
-            database[currentCompanyId].accounts[platform] = 0;
-            showToast(`Semua koneksi ${platformConfig[platform].name} diputus. 🔌`, 'warning');
-            renderApp();
+            database[currentCompanyId].accounts[platform] = 0; saveToFirestore();
+            showToast(`Koneksi ${platformConfig[platform].name} diputus. 🔌`, 'warning'); renderApp();
         }
 
         function renderSidebar() {
-            const navMenu = document.getElementById('nav-menu');
-            const navFooter = document.getElementById('nav-footer');
+            const navMenu = document.getElementById('nav-menu'); const navFooter = document.getElementById('nav-footer');
             navMenu.innerHTML = ''; navFooter.innerHTML = '';
+            
+            // FILTER ROLE
+            let visibleTabs = tabs;
+            if (loginRole === 'client') visibleTabs = tabs.filter(t => t.id !== 'billing');
 
-            tabs.forEach(tab => {
+            visibleTabs.forEach(tab => {
                 const isActive = activeTab === tab.id;
-                const activeClass = isActive 
-                    ? 'bg-gradient-to-r from-brand-500 to-brand-600 text-white font-black shadow-lg shadow-brand-500/40 scale-105 border-none' 
-                    : 'text-brand-900 font-extrabold hover:bg-brand-100 hover:text-brand-700 btn-smooth';
+                const activeClass = isActive ? 'bg-gradient-to-r from-brand-500 to-brand-600 text-white font-black shadow-lg shadow-brand-500/40 scale-105 border-none' : 'text-brand-900 font-extrabold hover:bg-brand-100 hover:text-brand-700 btn-smooth';
                 const iconClass = isActive ? 'text-white' : 'text-brand-400';
                 const badgeHtml = tab.badge ? `<span class="bg-gradient-to-r from-accent-400 to-yellow-400 text-white text-[10px] uppercase tracking-widest font-black px-2.5 py-0.5 rounded-full ml-auto shadow-sm">${tab.badge}</span>` : '';
 
@@ -392,10 +674,12 @@
         }
 
         function renderMobileNav() {
-            const mNav = document.getElementById('mobile-nav');
-            mNav.innerHTML = '';
-            const mobileTabs = tabs.filter(t => t.id !== 'billing').slice(0, 5);
+            const mNav = document.getElementById('mobile-nav'); mNav.innerHTML = '';
             
+            // FILTER ROLE
+            let mobileTabs = tabs.filter(t => t.id !== 'billing').slice(0, 5);
+            if (loginRole === 'client') mobileTabs = mobileTabs.filter(t => t.id !== 'settings'); 
+
             mobileTabs.forEach(tab => {
                 const isActive = activeTab === tab.id;
                 const activeClass = isActive ? 'text-brand-600 scale-110 -translate-y-2' : 'text-slate-400 hover:text-brand-400';
@@ -406,6 +690,8 @@
 
         function renderApp() {
             const contentDiv = document.getElementById('main-content');
+            if(!database[currentCompanyId]) return; 
+            
             if (activeTab === 'dashboard') contentDiv.innerHTML = getDashboardHTML();
             else if (activeTab === 'schedule') contentDiv.innerHTML = getScheduleHTML();
             else if (activeTab === 'analytics') contentDiv.innerHTML = getAnalyticsHTML();
@@ -417,10 +703,30 @@
 
         function getDashboardHTML() {
             const data = database[currentCompanyId];
+            const totalClients = Object.keys(database).length;
+            
+            // HANYA ADMIN
+            const adminBanner = loginRole === 'admin' ? `
+                <div class="bg-gradient-to-r from-brand-900 to-brand-700 rounded-[2rem] p-5 md:p-6 mb-8 text-white flex flex-col md:flex-row md:items-center justify-between gap-4 shadow-lg border-4 border-white animate-fade-in relative overflow-hidden">
+                    <div class="absolute -right-10 -top-10 opacity-20"><i data-lucide="building" class="w-48 h-48"></i></div>
+                    <div class="flex items-center gap-4 relative z-10">
+                        <div class="bg-white/20 p-3 rounded-2xl backdrop-blur-sm"><i data-lucide="building" class="w-8 h-8 text-white"></i></div>
+                        <div>
+                            <h4 class="font-bold text-sm text-brand-200 uppercase tracking-wider mb-0.5">Mode Admin Agensi</h4>
+                            <p class="font-black text-xl">Anda sedang mengelola ${totalClients} Klien Aktif 🔥</p>
+                        </div>
+                    </div>
+                    <button onclick="changeTab('settings')" class="px-6 py-3.5 bg-white text-brand-900 font-black rounded-2xl hover:scale-105 transition-transform btn-smooth shadow-md relative z-10 flex items-center justify-center gap-2">
+                        <i data-lucide="plus" class="w-5 h-5"></i> Tambah Klien Baru
+                    </button>
+                </div>
+            ` : '';
+
             return `
                 <div class="flex flex-col gap-8 animate-fade-in">
+                    ${adminBanner}
                     
-                    <!-- Kartu Stats Tebal -->
+                    <!-- Kartu Stats -->
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                         <div class="bg-gradient-to-br from-brand-600 to-brand-800 p-6 rounded-[2rem] shadow-[0_10px_30px_rgba(var(--color-brand-900),0.3)] border-4 border-brand-400 flex items-center gap-5 relative overflow-hidden group hover:-translate-y-1 transition-all">
                             <div class="absolute -right-4 -top-4 w-24 h-24 bg-white opacity-10 rounded-full group-hover:scale-150 transition-transform duration-500"></div>
@@ -473,22 +779,18 @@
                         <div class="flex flex-col lg:flex-row justify-between lg:items-center gap-6">
                             <div class="flex flex-col sm:flex-row sm:items-center gap-3">
                                 <span class="text-base font-extrabold text-brand-600">Tembakkan ke:</span>
-                                
-                                <!-- Semua Logo Ditampilkan -->
                                 <div class="flex flex-wrap gap-2">
                                     ${Object.keys(platformConfig).map(plat => {
                                         const cfg = platformConfig[plat];
                                         const count = data.accounts[plat] || 0;
                                         
                                         if(count > 0) {
-                                            // Jika Tersambung (Berwarna & Ada Angka)
                                             return `
                                             <div class="w-14 h-14 ${cfg.bgClass} rounded-2xl flex items-center justify-center shadow-lg animate-slide-up hover:scale-110 transition-all border-4 border-white relative">
                                                 <i class="${cfg.icon} text-3xl"></i>
                                                 ${count > 1 ? `<span class="absolute -top-2 -right-2 bg-slate-900 text-white text-[10px] min-w-[20px] h-5 px-1.5 rounded-full flex items-center justify-center font-black border-2 border-white shadow-sm">${count}</span>` : ''}
                                             </div>`;
                                         } else {
-                                            // Jika Belum Tersambung (Warna Abu-abu Padat agar terlihat jelas slotnya)
                                             return `
                                             <button onclick="changeTab('integrations'); showToast('Yuk sambungkan ${cfg.name} dulu! 🔌', 'info')" class="w-14 h-14 bg-slate-100 text-slate-400 rounded-2xl flex items-center justify-center shadow-inner animate-slide-up hover:bg-slate-200 hover:text-slate-600 transition-all border-2 border-slate-200 relative cursor-pointer group">
                                                 <i class="${cfg.icon} text-3xl"></i>
@@ -577,23 +879,27 @@
 
         function getIntegrationsHTML() {
             const accs = database[currentCompanyId].accounts;
+            
+            // HANYA ADMIN
+            const magicLink = loginRole === 'admin' ? `
+                <div class="bg-gradient-to-r from-brand-600 to-brand-400 p-8 rounded-[2.5rem] mb-8 text-white shadow-lg flex flex-col md:flex-row items-center justify-between gap-6 border-4 border-white relative overflow-hidden">
+                    <div class="absolute -right-10 -top-10 opacity-20"><i data-lucide="wand-2" class="w-48 h-48"></i></div>
+                    <div class="flex items-center gap-5 relative z-10">
+                        <div class="bg-white/20 p-3 md:p-4 rounded-2xl backdrop-blur-sm flex-shrink-0"><i data-lucide="wand-2" class="w-8 h-8"></i></div>
+                        <div>
+                            <h3 class="text-2xl font-black mb-1">Magic Link Klien ✨</h3>
+                            <p class="font-bold text-brand-50 text-sm md:text-base">Kirim link ini ke klien. Mereka bisa sambung akun sendiri tanpa perlu kasih password!</p>
+                        </div>
+                    </div>
+                    <button onclick="showToast('Link berhasil disalin! 📋', 'success')" class="bg-white text-brand-700 px-6 py-3.5 rounded-2xl font-black hover:scale-105 transition-transform shadow-md flex items-center gap-2 flex-shrink-0 w-full md:w-auto justify-center btn-smooth relative z-10">
+                        <i data-lucide="copy" class="w-5 h-5"></i> Salin Link
+                    </button>
+                </div>
+            ` : '';
+
             return `
                 <div class="animate-fade-in">
-                    <!-- Banner Magic Link -->
-                    <div class="bg-gradient-to-r from-brand-600 to-brand-400 p-8 rounded-[2.5rem] mb-8 text-white shadow-lg flex flex-col md:flex-row items-center justify-between gap-6 border-4 border-white relative overflow-hidden">
-                        <div class="absolute -right-10 -top-10 opacity-20"><i data-lucide="wand-2" class="w-48 h-48"></i></div>
-                        <div class="flex items-center gap-5 relative z-10">
-                            <div class="bg-white/20 p-4 rounded-2xl backdrop-blur-sm hidden sm:block"><i data-lucide="wand-2" class="w-8 h-8"></i></div>
-                            <div>
-                                <h3 class="text-2xl font-black mb-1">Magic Link Klien ✨</h3>
-                                <p class="font-bold text-brand-50 text-sm md:text-base">Kirim link ini ke klien. Mereka bisa sambung akun sendiri tanpa perlu kasih password!</p>
-                            </div>
-                        </div>
-                        <button onclick="showToast('Link berhasil disalin! 📋', 'success')" class="bg-white text-brand-700 px-6 py-3.5 rounded-2xl font-black hover:scale-105 transition-transform shadow-md flex items-center gap-2 flex-shrink-0 w-full md:w-auto justify-center btn-smooth relative z-10">
-                            <i data-lucide="copy" class="w-5 h-5"></i> Salin Link
-                        </button>
-                    </div>
-
+                    ${magicLink}
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                         ${Object.keys(platformConfig).map(plat => {
                             const cfg = platformConfig[plat]; 
@@ -663,10 +969,29 @@
 
         function getSettingsHTML() {
             const currentTheme = document.documentElement.getAttribute('data-theme');
+            
+            // HANYA ADMIN
+            const formTambahKlien = loginRole === 'admin' ? `
+                <div class="bg-white p-6 rounded-3xl border-4 border-brand-100 mb-6">
+                    <h3 class="font-extrabold text-xl mb-2 text-slate-800">Tambah Ruang Klien Baru</h3>
+                    <div class="flex gap-3">
+                        <input type="text" id="new-client-name" class="flex-1 bg-brand-50 border-4 border-brand-100 rounded-2xl px-4 py-3 font-bold text-brand-900 outline-none focus:border-brand-500" placeholder="Nama Klien...">
+                        <button onclick="createNewClient()" class="bg-brand-900 text-white px-6 py-3 rounded-2xl font-bold hover:bg-brand-500 btn-smooth">Buat Ruang</button>
+                    </div>
+                </div>
+            ` : `
+                <div class="bg-brand-50 p-6 rounded-3xl border-2 border-dashed border-brand-200 mb-6 text-center">
+                    <i data-lucide="shield-check" class="w-8 h-8 mx-auto text-brand-400 mb-2"></i>
+                    <p class="font-bold text-brand-700">Hubungi Agensi Anda jika ingin menambahkan cabang bisnis baru.</p>
+                </div>
+            `;
+
             return `
                 <div class="animate-fade-in glass border-4 border-brand-200 shadow-sm p-8 rounded-[2rem] max-w-3xl">
-                    <h2 class="text-3xl font-black text-brand-900 mb-8 flex items-center gap-3"><i data-lucide="palette" class="w-8 h-8"></i> Personalisasi Tema</h2>
+                    <h2 class="text-3xl font-black text-brand-900 mb-8 flex items-center gap-3"><i data-lucide="palette" class="w-8 h-8"></i> Personalisasi & Akun</h2>
                     
+                    ${formTambahKlien}
+
                     <div class="bg-white p-6 rounded-3xl border-4 border-brand-100 mb-6">
                         <h3 class="font-extrabold text-xl mb-4 text-slate-800">Pilih Warna Dasbor</h3>
                         <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -676,37 +1001,39 @@
                         </div>
                     </div>
 
-                    <div class="bg-white p-6 rounded-3xl border-4 border-brand-100">
-                        <h3 class="font-extrabold text-xl mb-2 text-slate-800">Tambah Ruang Klien Baru</h3>
-                        <div class="flex gap-3">
-                            <input type="text" id="new-client-name" class="flex-1 bg-brand-50 border-4 border-brand-100 rounded-2xl px-4 py-3 font-bold text-brand-900 outline-none focus:border-brand-500" placeholder="Nama Klien...">
-                            <button onclick="createNewClient()" class="bg-brand-900 text-white px-6 py-3 rounded-2xl font-bold hover:bg-brand-500 btn-smooth">Buat Ruang</button>
-                        </div>
+                    <!-- Tombol Keluar / Logout -->
+                    <div class="bg-white p-6 rounded-3xl border-4 border-rose-100 mt-6">
+                        <h3 class="font-extrabold text-xl mb-2 text-rose-600">Sesi Akun</h3>
+                        <p class="text-slate-500 font-bold mb-4">Keluar dari ruang kerja dan kembali ke Pintu Masuk.</p>
+                        <button onclick="handleLogout()" class="bg-rose-50 text-rose-600 border-2 border-rose-200 px-6 py-3 rounded-2xl font-bold hover:bg-rose-500 hover:text-white transition-all btn-smooth flex items-center justify-center gap-2">
+                            <i data-lucide="log-out" class="w-5 h-5"></i> Keluar (Logout)
+                        </button>
                     </div>
                 </div>
             `;
         }
 
         function createNewClient() {
+            if(loginRole !== 'admin') return showToast('Akses ditolak!', 'error');
             const input = document.getElementById('new-client-name');
             const name = input.value.trim();
             if(!name) return showToast('Tulis nama kliennya dong!', 'warning');
             
             const newId = 'klien' + Date.now();
             database[newId] = {
+                name: `🏢 ${name}`,
                 accounts: { facebook: 0, twitter: 0, instagram: 0, linkedin: 0, youtube: 0, tiktok: 0, whatsapp: 0, telegram: 0, pinterest: 0, threads: 0 },
                 feed: [], scheduled: []
             };
 
-            document.getElementById('company-selector').add(new Option(`🏢 ${name}`, newId));
-            document.getElementById('mobile-company-selector').add(new Option(`🏢 ${name}`, newId));
-
+            saveToFirestore();
+            updateCompanyDropdowns();
             input.value = '';
             showToast(`Ruang Kerja "${name}" dibuat!`, 'success');
             changeCompany(newId);
         }
 
-        window.onload = init;
+        window.onload = () => {};
     </script>
 </body>
 </html>
